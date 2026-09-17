@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens for the clay/glass visual system. Tailwind v4 is CSS-first,
+ * so these @theme variables are the token layer -- each one generates a
+ * matching utility (e.g. --radius-clay -> rounded-clay, --shadow-clay ->
+ * shadow-clay). Components reference these instead of hard-coding their own
+ * shadow/radius values.
+ *
+ * The existing indigo/slate/amber/red/emerald palette is kept as-is (indigo
+ * already reads as a soft modern blue and is used consistently everywhere);
+ * these add the additional soft accent colors, clay surfaces, glass
+ * surfaces, and motion easing the redesign calls for.
+ */
+@theme {
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+
+  --color-accent-purple: #c4b5fd;
+  --color-accent-cyan: #a5f3fc;
+  --color-accent-green: #bbf7d0;
+  --color-accent-warm: #fde8d0;
+
+  --radius-clay-sm: 1rem;
+  --radius-clay: 1.25rem;
+  --radius-clay-lg: 1.75rem;
+
+  /* Soft raised "clay" surface: light source top-left. */
+  --shadow-clay: 5px 5px 14px rgba(148, 163, 184, 0.3), -5px -5px 14px rgba(255, 255, 255, 0.7);
+  --shadow-clay-hover: 7px 7px 18px rgba(148, 163, 184, 0.35), -7px -7px 18px rgba(255, 255, 255, 0.8);
+  --shadow-clay-pressed: inset 3px 3px 8px rgba(148, 163, 184, 0.3), inset -3px -3px 8px rgba(255, 255, 255, 0.6);
+  --shadow-clay-inset: inset 2px 2px 6px rgba(148, 163, 184, 0.18), inset -2px -2px 6px rgba(255, 255, 255, 0.8);
+
+  /* Glass: translucent, blurred, used sparingly (nav, modals, overlays). */
+  --shadow-glass: 0 8px 32px rgba(30, 41, 59, 0.12);
+
+  --ease-clay: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+body {
+  @apply min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary-50 text-slate-900;
+}
