@@ -22,23 +22,35 @@ export function DashboardPage() {
         <ErrorState message={dashboard.error} onRetry={dashboard.retry} />
       ) : (
         <>
-          <DeadlinesSection
-            overdueTasks={dashboard.overdueTasks}
-            upcomingDeadlines={dashboard.upcomingDeadlines}
-            referenceDate={dashboard.today}
-          />
-
-          <div className="grid gap-6 lg:grid-cols-2">
-            <TodayScheduleSection entries={dashboard.todaySchedule} />
-            <TodayTasksSection
-              tasks={dashboard.todayTasks}
+          <div className="motion-safe:animate-fade-in-up">
+            <DeadlinesSection
+              overdueTasks={dashboard.overdueTasks}
+              upcomingDeadlines={dashboard.upcomingDeadlines}
               referenceDate={dashboard.today}
-              onToggleComplete={dashboard.toggleTaskComplete}
-              onAddTask={dashboard.addTask}
             />
           </div>
 
-          <ProgressSection daily={dashboard.dailyProgress} weekly={dashboard.weeklyProgress} />
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="motion-safe:animate-fade-in-up [animation-delay:80ms]">
+              <TodayScheduleSection entries={dashboard.todaySchedule} />
+            </div>
+            <div className="motion-safe:animate-fade-in-up [animation-delay:140ms]">
+              <TodayTasksSection
+                tasks={dashboard.todayTasks}
+                referenceDate={dashboard.today}
+                onToggleComplete={dashboard.toggleTaskComplete}
+                onAddTask={dashboard.addTask}
+              />
+            </div>
+          </div>
+
+          <div className="motion-safe:animate-fade-in-up [animation-delay:200ms]">
+            <ProgressSection
+              daily={dashboard.dailyProgress}
+              weekly={dashboard.weeklyProgress}
+              focusMinutesToday={dashboard.focusMinutesToday}
+            />
+          </div>
         </>
       )}
     </div>

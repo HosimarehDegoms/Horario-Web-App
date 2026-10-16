@@ -1,5 +1,6 @@
 export type TaskStatus = 'not_started' | 'in_progress' | 'completed'
 export type TaskPriority = 'low' | 'medium' | 'high'
+export type TaskRecurrence = 'daily' | 'weekly'
 
 export interface Task {
   id: string
@@ -11,6 +12,8 @@ export interface Task {
   priority: TaskPriority
   category?: string
   estimatedDurationMinutes?: number
+  /** When set, completing this task creates its next occurrence automatically. */
+  recurrence?: TaskRecurrence
   createdAt: string
   updatedAt: string
   completedAt?: string
@@ -39,6 +42,7 @@ export interface CreateTaskInput {
   priority?: TaskPriority
   category?: string
   estimatedDurationMinutes?: number
+  recurrence?: TaskRecurrence
 }
 
 export type UpdateTaskInput = Partial<CreateTaskInput>

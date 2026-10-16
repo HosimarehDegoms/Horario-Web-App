@@ -1,9 +1,11 @@
-import { useMemo } from 'react'
 import { Card } from '../../../components/ui/Card'
 import { EmptyState } from '../../../components/ui/EmptyState'
-import { ScheduleCard } from '../../../components/schedule/ScheduleCard'
-import { DAY_OF_WEEK_LABELS, DAY_OF_WEEK_ORDER } from '../../../constants/schedule'
-import type { DayOfWeek, ScheduleEntry } from '../../../types/schedule'
+import { TimeGridTable } from './templates/TimeGridTable'
+import { SpreadsheetTable } from './templates/SpreadsheetTable'
+import { FlatScheduleTable } from './templates/FlatScheduleTable'
+import { DayPlannerTables } from './templates/DayPlannerTables'
+import { useTimetableTemplateStyle } from '../useTimetableTemplateStyle'
+import type { ScheduleEntry } from '../../../types/schedule'
 
 interface WeekViewProps {
   entries: ScheduleEntry[]
@@ -12,49 +14,31 @@ interface WeekViewProps {
 }
 
 export function WeekView({ entries, onEdit, onDelete }: WeekViewProps) {
-  const entriesByDay = useMemo(() => {
-    const grouped = new Map<DayOfWeek, ScheduleEntry[]>()
-    for (const day of DAY_OF_WEEK_ORDER) grouped.set(day, [])
-    for (const entry of entries) {
-      grouped.get(entry.dayOfWeek)?.push(entry)
-    }
-    for (const list of grouped.values()) {
-      list.sort((a, b) => a.startTime.localeCompare(b.startTime))
-    }
-    return grouped
-  }, [entries])
+  const style = useTimetableTemplateStyle()
 
   if (entries.length === 0) {
     return (
       <Card title="This Week">
-        <EmptyState title="No schedule yet" description="Add one manually or scan your printed schedule." />
+        <EmptyState
+          title="No schedule yet"
+          description="Add your first schedule entry to get started."
+          illustration="schedule"
+        />
       </Card>
     )
   }
 
-  return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-7">
-      {DAY_OF_WEEK_ORDER.map((day) => {
-        const dayEntries = entriesByDay.get(day) ?? []
-        return (
-          <Card key={day} title={DAY_OF_WEEK_LABELS[day]}>
-            {dayEntries.length === 0 ? (
-              <p className="text-sm text-slate-400">No classes</p>
-            ) : (
-              <ul className="space-y-2">
-                {dayEntries.map((entry) => (
-                  <ScheduleCard
-                    key={entry.id}
-                    entry={entry}
-                    onEdit={() => onEdit(entry)}
-                    onDelete={() => onDelete(entry)}
-                  />
-                ))}
-              </ul>
-            )}
-          </Card>
-        )
-      })}
-    </div>
-  )
+  if (style.tableFormat === 'flat_table') {
+    return <FlatScheduleTable entries={entries} onEdit={onEdit} onDelete={onDelete} density={style.density} />
+  }
+
+  if (style.tableFormat === 'day_tables') {
+    return <DayPlannerTables entries={entries} onEdit={onEdit} onDelete={onDelete} />
+  }
+
+  if (style.tableFormat === 'spreadsheet') {
+    return <SpreadsheetTable entries={entries} onEdit={onEdit} onDelete={onDelete} />
+  }
+
+  return <TimeGridTable entries={entries} onEdit={onEdit} onDelete={onDelete} vivid={style.vivid} />
 }

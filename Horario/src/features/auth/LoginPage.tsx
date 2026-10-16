@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Card } from '../../components/ui/Card'
+import { Mascot } from '../../components/illustrations/Mascot'
 import { LoginForm } from './components/LoginForm'
 import * as authService from '../../services/auth/authService'
 import type { LoginInput } from '../../types/auth'
@@ -12,10 +13,13 @@ export function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center px-4 py-12">
       <div className="w-full max-w-sm">
+        <div className="mb-4 text-center">
+          <Mascot variant="welcome" className="mx-auto h-32 w-32 sm:h-36 sm:w-36" />
+        </div>
         <div className="mb-6 text-center">
-          <h1 className="text-2xl font-semibold text-indigo-600">Horario</h1>
+          <h1 className="text-2xl font-semibold text-primary-600">Horario</h1>
           <p className="mt-1 text-sm text-slate-500">Log in to your account</p>
         </div>
         <Card>
@@ -23,7 +27,7 @@ export function LoginPage() {
         </Card>
         <p className="mt-4 text-center text-sm text-slate-500">
           Don't have an account?{' '}
-          <Link to="/signup" className="font-medium text-indigo-600 hover:underline">
+          <Link to="/signup" className="font-medium text-primary-600 hover:underline">
             Sign up
           </Link>
         </p>

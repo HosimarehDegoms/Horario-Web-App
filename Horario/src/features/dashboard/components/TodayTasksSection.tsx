@@ -18,9 +18,13 @@ export function TodayTasksSection({ tasks, referenceDate, onToggleComplete, onAd
         <QuickAddTask onAdd={onAddTask} />
       </div>
       {tasks.length === 0 ? (
-        <EmptyState title="You're all caught up!" description="Add a task when you have something to work on." />
+        <EmptyState
+          title="You're all caught up!"
+          description="Add a task when you have something to work on."
+          illustration="celebrate"
+        />
       ) : (
-        <ul className="space-y-2">
+        <ul className="stagger-list space-y-2">
           {tasks.map((task) => (
             <TaskCard key={task.id} task={task} referenceDate={referenceDate} onToggleComplete={onToggleComplete} />
           ))}

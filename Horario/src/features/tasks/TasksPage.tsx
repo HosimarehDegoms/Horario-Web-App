@@ -3,6 +3,7 @@ import { useTasks } from '../../hooks/useTasks'
 import { useSchedules } from '../../hooks/useSchedules'
 import { useSmartScheduling } from '../../hooks/useSmartScheduling'
 import { Button } from '../../components/ui/Button'
+import { Fab } from '../../components/ui/Fab'
 import { Modal } from '../../components/ui/Modal'
 import { ConfirmDialog } from '../../components/ui/ConfirmDialog'
 import { LoadingState } from '../../components/ui/LoadingState'
@@ -67,9 +68,10 @@ export function TasksPage() {
               ? 'Add a task when you have something to work on.'
               : 'Try a different view, status, priority, or search term.'
           }
+          illustration={tasks.length === 0 ? 'celebrate' : undefined}
         />
       ) : (
-        <ul className="space-y-2">
+        <ul className="stagger-list space-y-2">
           {filteredTasks.map((task) => (
             <TaskCard
               key={task.id}
@@ -114,6 +116,8 @@ export function TasksPage() {
         onConfirm={smartScheduling.confirmSlot}
         onClose={() => setSchedulingTask(null)}
       />
+
+      <Fab label="Add Task" onClick={() => setFormState({ mode: 'create' })} />
     </div>
   )
 }

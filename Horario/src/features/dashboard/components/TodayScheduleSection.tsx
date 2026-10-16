@@ -11,9 +11,13 @@ export function TodayScheduleSection({ entries }: TodayScheduleSectionProps) {
   return (
     <Card title="Today's Schedule">
       {entries.length === 0 ? (
-        <EmptyState title="No schedule yet" description="Add one manually or scan your printed schedule." />
+        <EmptyState
+          title="No schedule yet"
+          description="Add your first schedule entry to get started."
+          illustration="schedule"
+        />
       ) : (
-        <ul className="space-y-2">
+        <ul className="stagger-list space-y-2">
           {entries.map((entry) => (
             <ScheduleCard key={entry.id} entry={entry} />
           ))}

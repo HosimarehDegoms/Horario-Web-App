@@ -43,9 +43,13 @@ export function DayView({ entries, onEdit, onDelete }: DayViewProps) {
       </div>
 
       {dayEntries.length === 0 ? (
-        <EmptyState title="No schedule yet" description="Add one manually or scan your printed schedule." />
+        <EmptyState
+          title="No schedule yet"
+          description="Add your first schedule entry to get started."
+          illustration="schedule"
+        />
       ) : (
-        <ul className="space-y-2">
+        <ul className="stagger-list space-y-2">
           {dayEntries.map((entry) => (
             <ScheduleCard key={entry.id} entry={entry} onEdit={() => onEdit(entry)} onDelete={() => onDelete(entry)} />
           ))}

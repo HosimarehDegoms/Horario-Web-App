@@ -1,4 +1,4 @@
-import type { TaskPriority, TaskStatus } from '../types/task'
+import type { TaskPriority, TaskRecurrence, TaskStatus } from '../types/task'
 import type { DeadlineClassification } from '../types/dashboard'
 import type { BadgeVariant } from '../components/ui/Badge'
 
@@ -25,6 +25,13 @@ export const TASK_STATUS_LABELS: Record<TaskStatus, string> = {
 }
 
 export const TASK_CATEGORY_SUGGESTIONS = ['School', 'Work', 'Personal', 'Study']
+
+export const TASK_RECURRENCE_ORDER: TaskRecurrence[] = ['daily', 'weekly']
+
+export const TASK_RECURRENCE_LABELS: Record<TaskRecurrence, string> = {
+  daily: 'Daily',
+  weekly: 'Weekly',
+}
 
 export const DEADLINE_LABELS: Record<DeadlineClassification, string> = {
   overdue: 'Overdue',

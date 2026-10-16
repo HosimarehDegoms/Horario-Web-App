@@ -86,6 +86,7 @@ export function SmartScheduleModal({ task, getSuggestions, onConfirm, onClose }:
             <EmptyState
               title="No available time found"
               description="Your schedule is full before this task's deadline. Try a shorter estimated duration, a later deadline, or add the time manually."
+              illustration="schedule"
             />
           ) : (
             <ul className="space-y-2">

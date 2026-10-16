@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes } from 'react'
 type ButtonVariant = 'primary' | 'secondary' | 'danger'
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
-  primary: 'bg-primary-600 text-white hover:bg-primary-500 focus-visible:outline-primary-600',
+  primary: 'theme-surface text-white hover:brightness-110 active:brightness-95 focus-visible:outline-primary-600',
   secondary: 'bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-slate-400',
   danger: 'bg-red-500 text-white hover:bg-red-600 focus-visible:outline-red-500',
 }

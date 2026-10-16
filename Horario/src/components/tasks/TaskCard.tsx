@@ -6,6 +6,7 @@ import {
   DEADLINE_LABELS,
   TASK_PRIORITY_BADGE_VARIANT,
   TASK_PRIORITY_LABELS,
+  TASK_RECURRENCE_LABELS,
   TASK_STATUS_LABELS,
   TASK_STATUS_ORDER,
 } from '../../constants/tasks'
@@ -92,6 +93,7 @@ export function TaskCard({
         {typeof task.estimatedDurationMinutes === 'number' && (
           <Badge>{formatMinutes(task.estimatedDurationMinutes)}</Badge>
         )}
+        {task.recurrence && <Badge>↻ {TASK_RECURRENCE_LABELS[task.recurrence]}</Badge>}
       </div>
 
       {isScheduled && (

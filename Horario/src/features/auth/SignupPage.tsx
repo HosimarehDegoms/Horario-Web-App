@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from '../../components/ui/Card'
+import { Mascot } from '../../components/illustrations/Mascot'
 import { SignupForm } from './components/SignupForm'
 import * as authService from '../../services/auth/authService'
 import type { SignUpInput } from '../../types/auth'
@@ -18,10 +19,16 @@ export function SignupPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center px-4 py-12">
       <div className="w-full max-w-sm">
+        <div className="mb-4 text-center">
+          <Mascot
+            variant={needsEmailConfirmation ? 'celebrate' : 'welcome'}
+            className="mx-auto h-32 w-32 sm:h-36 sm:w-36"
+          />
+        </div>
         <div className="mb-6 text-center">
-          <h1 className="text-2xl font-semibold text-indigo-600">Horario</h1>
+          <h1 className="text-2xl font-semibold text-primary-600">Horario</h1>
           <p className="mt-1 text-sm text-slate-500">Create your account</p>
         </div>
         <Card>
@@ -31,7 +38,7 @@ export function SignupPage() {
               <p className="mt-1 text-sm text-slate-500">
                 We sent a confirmation link to your Gmail address. Confirm it, then log in.
               </p>
-              <Link to="/login" className="mt-4 inline-block text-sm font-medium text-indigo-600 hover:underline">
+              <Link to="/login" className="mt-4 inline-block text-sm font-medium text-primary-600 hover:underline">
                 Go to login
               </Link>
             </div>
@@ -42,7 +49,7 @@ export function SignupPage() {
         {!needsEmailConfirmation && (
           <p className="mt-4 text-center text-sm text-slate-500">
             Already have an account?{' '}
-            <Link to="/login" className="font-medium text-indigo-600 hover:underline">
+            <Link to="/login" className="font-medium text-primary-600 hover:underline">
               Log in
             </Link>
           </p>

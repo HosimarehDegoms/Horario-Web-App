@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import type { CreateTaskInput, Task, TaskScheduleBlock, TaskStatus, UpdateTaskInput } from '../types/task'
 import * as taskService from '../services/tasks/taskService'
+import { advanceRecurringDeadline } from '../utils/taskRecurrence'
 
 interface UseTasksResult {
   tasks: Task[]
@@ -52,10 +53,32 @@ export function useTasks(): UseTasksResult {
     setTasks((current) => [task, ...current])
   }, [])
 
-  const updateTask = useCallback(async (taskId: string, input: UpdateTaskInput) => {
-    const updated = await taskService.updateTask(taskId, input)
-    setTasks((current) => current.map((task) => (task.id === taskId ? updated : task)))
+  /** Completing a recurring task leaves this instance as history and creates the next occurrence. */
+  const spawnNextOccurrence = useCallback(async (completedTask: Task) => {
+    if (!completedTask.recurrence) return
+    const nextTask = await taskService.createTask({
+      title: completedTask.title,
+      description: completedTask.description,
+      deadline: advanceRecurringDeadline(completedTask.deadline, completedTask.recurrence),
+      priority: completedTask.priority,
+      category: completedTask.category,
+      estimatedDurationMinutes: completedTask.estimatedDurationMinutes,
+      recurrence: completedTask.recurrence,
+    })
+    setTasks((current) => [nextTask, ...current])
   }, [])
+
+  const updateTask = useCallback(
+    async (taskId: string, input: UpdateTaskInput) => {
+      const previousStatus = tasks.find((task) => task.id === taskId)?.status
+      const updated = await taskService.updateTask(taskId, input)
+      setTasks((current) => current.map((task) => (task.id === taskId ? updated : task)))
+      if (input.status === 'completed' && previousStatus !== 'completed') {
+        await spawnNextOccurrence(updated)
+      }
+    },
+    [tasks, spawnNextOccurrence],
+  )
 
   const deleteTask = useCallback(async (taskId: string) => {
     await taskService.deleteTask(taskId)
@@ -70,8 +93,11 @@ export function useTasks(): UseTasksResult {
       const nextStatus: TaskStatus = target.status === 'completed' ? 'not_started' : 'completed'
       const updated = await taskService.updateTaskStatus(taskId, nextStatus)
       setTasks((current) => current.map((task) => (task.id === taskId ? updated : task)))
+      if (nextStatus === 'completed') {
+        await spawnNextOccurrence(updated)
+      }
     },
-    [tasks],
+    [tasks, spawnNextOccurrence],
   )
 
   const scheduleTask = useCallback(async (taskId: string, block: TaskScheduleBlock) => {

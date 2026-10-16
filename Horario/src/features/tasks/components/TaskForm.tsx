@@ -8,11 +8,13 @@ import {
   TASK_CATEGORY_SUGGESTIONS,
   TASK_PRIORITY_LABELS,
   TASK_PRIORITY_ORDER,
+  TASK_RECURRENCE_LABELS,
+  TASK_RECURRENCE_ORDER,
   TASK_STATUS_LABELS,
   TASK_STATUS_ORDER,
 } from '../../../constants/tasks'
 import { parseDateInputValue, toDateInputValue } from '../../../utils/date'
-import type { CreateTaskInput, Task, TaskPriority, TaskStatus } from '../../../types/task'
+import type { CreateTaskInput, Task, TaskPriority, TaskRecurrence, TaskStatus } from '../../../types/task'
 
 interface TaskFormProps {
   initialTask?: Task
@@ -39,6 +41,7 @@ export function TaskForm({ initialTask, onSubmit, onCancel }: TaskFormProps) {
   const [estimatedDuration, setEstimatedDuration] = useState(
     initialTask?.estimatedDurationMinutes != null ? String(initialTask.estimatedDurationMinutes) : '',
   )
+  const [recurrence, setRecurrence] = useState<TaskRecurrence | ''>(initialTask?.recurrence ?? '')
   const [errors, setErrors] = useState<FormErrors>({})
   const [submitting, setSubmitting] = useState(false)
 
@@ -65,6 +68,7 @@ export function TaskForm({ initialTask, onSubmit, onCancel }: TaskFormProps) {
         priority,
         category: category.trim() || undefined,
         estimatedDurationMinutes: estimatedDuration.trim() ? Number(estimatedDuration) : undefined,
+        recurrence: recurrence || undefined,
       })
     } finally {
       setSubmitting(false)
@@ -124,20 +128,39 @@ export function TaskForm({ initialTask, onSubmit, onCancel }: TaskFormProps) {
         />
       </div>
 
-      <div>
-        <Input
-          label="Category"
-          value={category}
-          onChange={(event) => setCategory(event.target.value)}
-          placeholder="e.g. School"
-          list={CATEGORY_SUGGESTIONS_ID}
-        />
-        <datalist id={CATEGORY_SUGGESTIONS_ID}>
-          {TASK_CATEGORY_SUGGESTIONS.map((suggestion) => (
-            <option key={suggestion} value={suggestion} />
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div>
+          <Input
+            label="Category"
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+            placeholder="e.g. School"
+            list={CATEGORY_SUGGESTIONS_ID}
+          />
+          <datalist id={CATEGORY_SUGGESTIONS_ID}>
+            {TASK_CATEGORY_SUGGESTIONS.map((suggestion) => (
+              <option key={suggestion} value={suggestion} />
+            ))}
+          </datalist>
+        </div>
+        <Select
+          label="Repeat"
+          value={recurrence}
+          onChange={(event) => setRecurrence(event.target.value as TaskRecurrence | '')}
+        >
+          <option value="">Does not repeat</option>
+          {TASK_RECURRENCE_ORDER.map((option) => (
+            <option key={option} value={option}>
+              {TASK_RECURRENCE_LABELS[option]}
+            </option>
           ))}
-        </datalist>
+        </Select>
       </div>
+      {recurrence && (
+        <p className="-mt-2 text-xs text-slate-500">
+          Marking this task complete will automatically create the next {TASK_RECURRENCE_LABELS[recurrence].toLowerCase()} occurrence.
+        </p>
+      )}
 
       <div className="flex justify-end gap-2 pt-2">
         <Button type="button" variant="secondary" onClick={onCancel} disabled={submitting}>

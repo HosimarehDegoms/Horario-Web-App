@@ -15,14 +15,31 @@
 @theme {
   --color-primary-50: #eef2ff;
   --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
   --color-primary-400: #818cf8;
   --color-primary-500: #6366f1;
   --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
 
   --color-accent-purple: #c4b5fd;
   --color-accent-cyan: #a5f3fc;
   --color-accent-green: #bbf7d0;
   --color-accent-warm: #fde8d0;
+
+  /* Bolder, saturated siblings to the pastel --color-accent-* tints above —
+     for CTAs, FABs, and highlights that need to read as confident color
+     blocks rather than soft surface tints. */
+  --color-brand-teal-400: #2dd4bf;
+  --color-brand-teal-500: #14b8a6;
+  --color-brand-teal-600: #0d9488;
+  --color-brand-coral-400: #fb7185;
+  --color-brand-coral-500: #f43f5e;
+  --color-brand-coral-600: #e11d48;
+  --color-brand-sun-400: #fbbf24;
+  --color-brand-sun-500: #f59e0b;
 
   --radius-clay-sm: 1rem;
   --radius-clay: 1.25rem;
@@ -38,8 +55,146 @@
   --shadow-glass: 0 8px 32px rgba(30, 41, 59, 0.12);
 
   --ease-clay: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Motion: entrance + playful micro-interactions, applied via motion-safe: so
+     prefers-reduced-motion users never get them. */
+  --animate-fade-in-up: fade-in-up 0.5s var(--ease-clay) both;
+  --animate-pop-in: pop-in 0.35s var(--ease-clay) both;
+  --animate-float: float 3.5s ease-in-out infinite;
+  --animate-wiggle: wiggle 0.4s ease-in-out;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+}
+
+/*
+ * Staggered entrance for list items — add `stagger-list` to the <ul>/<ol>
+ * and each child fades/slides in a little after the previous one. Pure CSS,
+ * no per-item JS needed. Capped at 10 explicit delays; items beyond that
+ * share the last one, which is unnoticeable since the list is already mid-animation.
+ */
+.stagger-list > * {
+  animation: fade-in-up 0.5s var(--ease-clay) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stagger-list > * {
+    animation: none;
+  }
+}
+.stagger-list > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.stagger-list > *:nth-child(2) {
+  animation-delay: 40ms;
+}
+.stagger-list > *:nth-child(3) {
+  animation-delay: 80ms;
+}
+.stagger-list > *:nth-child(4) {
+  animation-delay: 120ms;
+}
+.stagger-list > *:nth-child(5) {
+  animation-delay: 160ms;
+}
+.stagger-list > *:nth-child(6) {
+  animation-delay: 200ms;
+}
+.stagger-list > *:nth-child(7) {
+  animation-delay: 240ms;
+}
+.stagger-list > *:nth-child(8) {
+  animation-delay: 280ms;
+}
+.stagger-list > *:nth-child(9) {
+  animation-delay: 320ms;
+}
+.stagger-list > *:nth-child(n + 10) {
+  animation-delay: 360ms;
+}
+
+/*
+ * Theme finish system — `.theme-surface` is used by the handful of "primary
+ * accent" components (Button's primary variant, Fab, DateHeader, etc.)
+ * instead of a hard-coded bg-primary-600 / gradient class. Which actual
+ * background it resolves to depends on the nearest ancestor's
+ * data-theme-finish attribute, which can be set on <html> (the real,
+ * saved theme) or on a small scoped preview container (Settings page
+ * preview card) without affecting the rest of the live app.
+ */
+:root,
+[data-theme-finish] {
+  --theme-surface-bg: linear-gradient(135deg, var(--color-primary-400), var(--color-primary-700));
+  --theme-surface-shadow: var(--shadow-clay);
+}
+[data-theme-finish='solid'] {
+  --theme-surface-bg: var(--color-primary-600);
+  --theme-surface-shadow: var(--shadow-clay);
+}
+[data-theme-finish='gradient'] {
+  --theme-surface-bg: linear-gradient(135deg, var(--color-primary-400), var(--color-primary-700));
+  --theme-surface-shadow: var(--shadow-clay);
+}
+[data-theme-finish='matte'] {
+  --theme-surface-bg: var(--color-primary-500);
+  --theme-surface-shadow: none;
+}
+[data-theme-finish='metallic'] {
+  --theme-surface-bg: linear-gradient(
+    120deg,
+    var(--color-primary-300) 0%,
+    var(--color-primary-700) 40%,
+    var(--color-primary-900) 55%,
+    var(--color-primary-400) 100%
+  );
+  --theme-surface-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), var(--shadow-clay);
+}
+.theme-surface {
+  background: var(--theme-surface-bg);
+  box-shadow: var(--theme-surface-shadow);
 }
 
 body {
-  @apply min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary-50 text-slate-900;
+  @apply min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-100/70 text-slate-900;
 }
