@@ -8,8 +8,8 @@ interface CardProps {
 
 export function Card({ title, children, className = '' }: CardProps) {
   return (
-    <section className={`rounded-clay border border-primary-100/60 bg-white p-4 shadow-clay sm:p-5 ${className}`}>
-      {title && <h2 className="mb-3 text-base font-semibold text-slate-900 sm:text-lg">{title}</h2>}
+    <section className={`rounded-clay border border-slate-200 bg-white/90 p-5 shadow-clay sm:p-6 ${className}`}>
+      {title && <h2 className="mb-4 text-base font-semibold tracking-tight text-slate-900 sm:text-lg">{title}</h2>}
       {children}
     </section>
   )

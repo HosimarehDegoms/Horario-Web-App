@@ -1,18 +1,31 @@
 @import "tailwindcss";
 
 /*
- * Design tokens for the clay/glass visual system. Tailwind v4 is CSS-first,
- * so these @theme variables are the token layer -- each one generates a
- * matching utility (e.g. --radius-clay -> rounded-clay, --shadow-clay ->
- * shadow-clay). Components reference these instead of hard-coding their own
- * shadow/radius values.
+ * Design tokens for the editorial visual system: warm paper surfaces,
+ * hairline borders, tight radii and near-flat elevation. Tailwind v4 is
+ * CSS-first, so these @theme variables are the token layer -- each one
+ * generates a matching utility (--radius-clay -> rounded-clay, --shadow-clay
+ * -> shadow-clay). The "clay" names are kept so existing components pick up
+ * the new look without per-file churn.
  *
- * The existing indigo/slate/amber/red/emerald palette is kept as-is (indigo
- * already reads as a soft modern blue and is used consistently everywhere);
- * these add the additional soft accent colors, clay surfaces, glass
- * surfaces, and motion easing the redesign calls for.
+ * The slate scale is overridden with a warm stone ramp so every existing
+ * text-slate-* / bg-slate-* / border-slate-* utility shifts to one gray
+ * family. The primary scale stays swappable at runtime (see applyTheme.ts).
  */
 @theme {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --color-slate-50: #faf8f5;
+  --color-slate-100: #f3f0ea;
+  --color-slate-200: #e7e2d9;
+  --color-slate-300: #d4cdc0;
+  --color-slate-400: #a39b8c;
+  --color-slate-500: #78705f;
+  --color-slate-600: #5b5446;
+  --color-slate-700: #433d32;
+  --color-slate-800: #2b2720;
+  --color-slate-900: #1a1713;
+
   --color-primary-50: #eef2ff;
   --color-primary-100: #e0e7ff;
   --color-primary-200: #c7d2fe;
@@ -29,9 +42,6 @@
   --color-accent-green: #bbf7d0;
   --color-accent-warm: #fde8d0;
 
-  /* Bolder, saturated siblings to the pastel --color-accent-* tints above —
-     for CTAs, FABs, and highlights that need to read as confident color
-     blocks rather than soft surface tints. */
   --color-brand-teal-400: #2dd4bf;
   --color-brand-teal-500: #14b8a6;
   --color-brand-teal-600: #0d9488;
@@ -41,24 +51,21 @@
   --color-brand-sun-400: #fbbf24;
   --color-brand-sun-500: #f59e0b;
 
-  --radius-clay-sm: 1rem;
-  --radius-clay: 1.25rem;
-  --radius-clay-lg: 1.75rem;
+  --radius-clay-sm: 0.5rem;
+  --radius-clay: 0.875rem;
+  --radius-clay-lg: 1.25rem;
 
-  /* Soft raised "clay" surface: light source top-left. */
-  --shadow-clay: 5px 5px 14px rgba(148, 163, 184, 0.3), -5px -5px 14px rgba(255, 255, 255, 0.7);
-  --shadow-clay-hover: 7px 7px 18px rgba(148, 163, 184, 0.35), -7px -7px 18px rgba(255, 255, 255, 0.8);
-  --shadow-clay-pressed: inset 3px 3px 8px rgba(148, 163, 184, 0.3), inset -3px -3px 8px rgba(255, 255, 255, 0.6);
-  --shadow-clay-inset: inset 2px 2px 6px rgba(148, 163, 184, 0.18), inset -2px -2px 6px rgba(255, 255, 255, 0.8);
+  /* Single light source, top. Shadows are warm-tinted, never pure black. */
+  --shadow-clay: 0 1px 2px rgba(43, 39, 32, 0.06);
+  --shadow-clay-hover: 0 6px 16px -6px rgba(43, 39, 32, 0.18);
+  --shadow-clay-pressed: inset 0 1px 2px rgba(43, 39, 32, 0.14);
+  --shadow-clay-inset: inset 0 1px 0 rgba(43, 39, 32, 0.04);
 
-  /* Glass: translucent, blurred, used sparingly (nav, modals, overlays). */
-  --shadow-glass: 0 8px 32px rgba(30, 41, 59, 0.12);
+  --shadow-glass: 0 1px 0 rgba(43, 39, 32, 0.06);
 
-  --ease-clay: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-clay: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Motion: entrance + playful micro-interactions, applied via motion-safe: so
-     prefers-reduced-motion users never get them. */
-  --animate-fade-in-up: fade-in-up 0.5s var(--ease-clay) both;
+  --animate-fade-in-up: fade-in-up 0.45s var(--ease-clay) both;
   --animate-pop-in: pop-in 0.35s var(--ease-clay) both;
   --animate-float: float 3.5s ease-in-out infinite;
   --animate-wiggle: wiggle 0.4s ease-in-out;
@@ -67,7 +74,7 @@
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -78,7 +85,7 @@
 @keyframes pop-in {
   from {
     opacity: 0;
-    transform: scale(0.85);
+    transform: scale(0.96);
   }
   to {
     opacity: 1;
@@ -92,7 +99,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
   }
 }
 
@@ -188,13 +195,39 @@
     var(--color-primary-900) 55%,
     var(--color-primary-400) 100%
   );
-  --theme-surface-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), var(--shadow-clay);
+  --theme-surface-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), var(--shadow-clay);
 }
 .theme-surface {
   background: var(--theme-surface-bg);
   box-shadow: var(--theme-surface-shadow);
 }
 
+html {
+  scroll-behavior: smooth;
+  text-wrap: pretty;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
-  @apply min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-100/70 text-slate-900;
+  @apply min-h-dvh bg-slate-50 font-sans text-slate-900 antialiased;
+  font-feature-settings: 'ss01', 'tnum';
+  background-image:
+    radial-gradient(60rem 28rem at 85% -10%, color-mix(in oklab, var(--color-primary-500) 9%, transparent), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .17 0 0 0 0 .15 0 0 0 0 .12 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline-color: var(--color-primary-600);
 }

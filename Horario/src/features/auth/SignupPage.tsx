@@ -19,7 +19,7 @@ export function SignupPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-4 py-12">
+    <div className="flex min-h-dvh items-center justify-center px-4 py-12">
       <div className="w-full max-w-sm">
         <div className="mb-4 text-center">
           <Mascot
@@ -28,7 +28,7 @@ export function SignupPage() {
           />
         </div>
         <div className="mb-6 text-center">
-          <h1 className="text-2xl font-semibold text-primary-600">Horario</h1>
+          <h1 className="text-3xl font-semibold text-slate-900">Horario</h1>
           <p className="mt-1 text-sm text-slate-500">Create your account</p>
         </div>
         <Card>

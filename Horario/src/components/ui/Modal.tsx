@@ -52,23 +52,23 @@ export function Modal({ open, title, onClose, children }: ModalProps) {
         type="button"
         aria-label="Close"
         onClick={onClose}
-        className="absolute inset-0 bg-slate-900/30 backdrop-blur-sm"
+        className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]"
       />
       <div
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className={`relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-clay border border-white/60 bg-white/85 p-5 shadow-glass backdrop-blur-xl transition-[opacity,transform] duration-200 ease-clay motion-reduce:transition-none ${
-          open ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+        className={`relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-clay border border-slate-200 bg-slate-50 p-6 shadow-[0_24px_60px_-20px_rgba(43,39,32,0.35)] transition-[opacity,transform] duration-200 ease-clay motion-reduce:transition-none ${
+          open ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
         }`}
       >
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
+          <h2 className="text-lg font-semibold tracking-tight text-slate-900">{title}</h2>
           <button
             type="button"
             onClick={onClose}
             aria-label="Close"
-            className="rounded-full p-1.5 text-slate-400 transition-colors duration-150 hover:bg-slate-100 hover:text-slate-600"
+            className="rounded-md p-1.5 text-slate-400 transition-colors duration-150 hover:bg-slate-100 hover:text-slate-600"
           >
             ✕
           </button>

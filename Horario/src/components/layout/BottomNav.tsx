@@ -5,7 +5,7 @@ import { NAV_ITEMS } from './navItems'
 export function BottomNav() {
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-30 border-t border-white/60 bg-white/80 shadow-glass backdrop-blur-xl lg:hidden print:hidden"
+      className="fixed inset-x-0 bottom-0 z-30 border-t border-slate-200 bg-slate-50/95 backdrop-blur-md lg:hidden print:hidden"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <div className="mx-auto flex max-w-lg items-stretch justify-around">
@@ -23,8 +23,8 @@ export function BottomNav() {
             {({ isActive }) => (
               <>
                 <span
-                  className={`flex h-8 w-8 items-center justify-center rounded-full transition-[background-color,transform] duration-200 ease-clay motion-reduce:transition-none ${
-                    isActive ? 'theme-surface -translate-y-0.5 text-white' : ''
+                  className={`flex h-8 w-12 items-center justify-center rounded-full transition-colors duration-200 ${
+                    isActive ? 'bg-primary-100 text-primary-700' : ''
                   }`}
                 >
                   <item.icon className="h-5 w-5" />

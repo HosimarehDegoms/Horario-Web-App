@@ -9,7 +9,7 @@ interface EmptyStateProps {
 
 export function EmptyState({ title, description, illustration }: EmptyStateProps) {
   return (
-    <div className="rounded-clay-sm border border-dashed border-slate-300 bg-slate-50/60 px-4 py-6 text-center">
+    <div className="rounded-clay-sm border border-dashed border-slate-300 bg-transparent px-4 py-8 text-center">
       {illustration && (
         <Mascot
           variant={illustration}

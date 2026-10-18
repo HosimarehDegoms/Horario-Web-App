@@ -15,7 +15,7 @@ export function Fab({ label, className = '', ...props }: FabProps) {
       type="button"
       aria-label={label}
       title={label}
-      className={`theme-surface fixed right-5 bottom-24 z-30 flex h-14 w-14 items-center justify-center rounded-full text-white transition-[transform,box-shadow,filter] duration-200 ease-clay hover:-translate-y-1 hover:brightness-110 active:scale-90 active:brightness-95 motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:hidden print:hidden ${className}`}
+      className={`theme-surface fixed right-5 bottom-24 z-30 flex h-14 w-14 items-center justify-center rounded-2xl text-white transition-[transform,box-shadow,filter] duration-200 ease-clay hover:brightness-110 active:scale-95 active:brightness-95 motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:hidden print:hidden ${className}`}
       style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
       {...props}
     >

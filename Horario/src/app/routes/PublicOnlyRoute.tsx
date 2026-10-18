@@ -9,7 +9,7 @@ export function PublicOnlyRoute({ children }: { children: ReactNode }) {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
+      <div className="flex min-h-dvh items-center justify-center">
         <LoadingState label="Checking your session…" />
       </div>
     )

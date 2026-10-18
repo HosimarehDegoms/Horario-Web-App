@@ -13,13 +13,13 @@ export function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-4 py-12">
+    <div className="flex min-h-dvh items-center justify-center px-4 py-12">
       <div className="w-full max-w-sm">
         <div className="mb-4 text-center">
           <Mascot variant="welcome" className="mx-auto h-32 w-32 sm:h-36 sm:w-36" />
         </div>
         <div className="mb-6 text-center">
-          <h1 className="text-2xl font-semibold text-primary-600">Horario</h1>
+          <h1 className="text-3xl font-semibold text-slate-900">Horario</h1>
           <p className="mt-1 text-sm text-slate-500">Log in to your account</p>
         </div>
         <Card>

@@ -4,12 +4,11 @@ interface LoadingStateProps {
 
 export function LoadingState({ label = 'Loading…' }: LoadingStateProps) {
   return (
-    <div className="flex items-center justify-center gap-2 px-4 py-6 text-sm text-slate-500">
-      <span
-        className="h-4 w-4 animate-spin rounded-full border-2 border-slate-300 border-t-primary-500 motion-reduce:animate-none"
-        aria-hidden="true"
-      />
-      {label}
+    <div role="status" className="space-y-3 px-1 py-4">
+      <div className="h-4 w-1/3 animate-pulse rounded bg-slate-200 motion-reduce:animate-none" />
+      <div className="h-16 animate-pulse rounded-clay-sm bg-slate-200/70 motion-reduce:animate-none" />
+      <div className="h-16 animate-pulse rounded-clay-sm bg-slate-200/70 motion-reduce:animate-none" />
+      <span className="sr-only">{label}</span>
     </div>
   )
 }

@@ -17,7 +17,7 @@ export function Textarea({ label, hideLabel = false, id, className = '', ...prop
       </label>
       <textarea
         id={textareaId}
-        className={`w-full rounded-clay-sm border border-slate-200 px-4 py-2.5 text-sm text-slate-900 shadow-clay-inset transition-colors duration-200 placeholder:text-slate-400 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100 ${className}`}
+        className={`w-full rounded-clay-sm border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 transition-colors duration-200 placeholder:text-slate-400 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100 ${className}`}
         {...props}
       />
     </div>

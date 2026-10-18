@@ -9,15 +9,17 @@ export function MobileTopBar() {
   }
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between border-b border-white/60 bg-white/70 px-4 py-3 shadow-glass backdrop-blur-xl lg:hidden print:hidden">
-      <span className="text-base font-bold text-primary-600">Horario</span>
+    <header className="sticky top-0 z-30 flex items-center justify-between border-b border-slate-200 bg-slate-50/95 px-4 py-3 backdrop-blur-md lg:hidden print:hidden">
+      <span className="text-lg font-semibold tracking-tight text-slate-900">
+        Horario<span className="text-primary-600">.</span>
+      </span>
       <div className="flex items-center gap-1">
         <NotificationsToggle compact />
         <button
           type="button"
           onClick={() => void handleLogout()}
           aria-label="Log out"
-          className="flex h-11 w-11 items-center justify-center rounded-full text-slate-500 transition-colors duration-200 hover:bg-slate-100 hover:text-slate-800"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-slate-500 transition-colors duration-200 hover:bg-slate-100 hover:text-slate-800"
         >
           <LogoutIcon className="h-5 w-5" />
         </button>
