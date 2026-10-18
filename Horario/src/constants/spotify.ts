@@ -31,3 +31,15 @@ export const LOFI_SEARCH_QUERIES = [
   'Lofi Rain Sounds',
   'Lofi Chillhop Radio',
 ]
+
+/** Quick-pick genre/mood chips for the track search — generic category names, not specific artists or tracks. */
+export const STUDY_GENRE_CHIPS = [
+  'Lofi',
+  'Jazz',
+  'Classical',
+  'Piano',
+  'Ambient',
+  'Chillhop',
+  'Nature Sounds',
+  'Instrumental',
+]
