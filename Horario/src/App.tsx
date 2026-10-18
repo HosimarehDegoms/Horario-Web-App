@@ -10,6 +10,7 @@ import { SchedulePage } from './features/schedule/SchedulePage'
 import { TasksPage } from './features/tasks/TasksPage'
 import { FocusPage } from './features/focus/FocusPage'
 import { SettingsPage } from './features/settings/SettingsPage'
+import { SpotifyCallbackPage } from './features/spotify/SpotifyCallbackPage'
 import { LoginPage } from './features/auth/LoginPage'
 import { SignupPage } from './features/auth/SignupPage'
 import { useReminderNotifications } from './hooks/useReminderNotifications'
@@ -65,6 +66,7 @@ function App() {
         <Route path="/tasks" element={<TasksPage />} />
         <Route path="/focus" element={<FocusPage />} />
         <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/spotify/callback" element={<SpotifyCallbackPage />} />
       </Route>
     </Routes>
   )

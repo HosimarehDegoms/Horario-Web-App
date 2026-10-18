@@ -9,6 +9,7 @@ import { FOCUS_PHASE_LABELS } from '../../constants/focus'
 import { formatCountdown, sumFocusMinutesForDay } from '../../utils/focus'
 import { FocusSettingsForm } from './components/FocusSettingsForm'
 import { FocusSessionHistory } from './components/FocusSessionHistory'
+import { SpotifyMusicPanel } from './components/SpotifyMusicPanel'
 
 const PHASE_RING_CLASSES = {
   focus: 'from-primary-400 to-primary-600',
@@ -106,6 +107,10 @@ export function FocusPage() {
                 </button>
               </div>
             )}
+          </Card>
+
+          <Card title="Focus Music" className="motion-safe:animate-fade-in-up">
+            <SpotifyMusicPanel />
           </Card>
         </>
       )}
