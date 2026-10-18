@@ -42,8 +42,8 @@ export function SpotifySearchPanel({ getAccessToken, deviceId, currentTrackId }:
       if (!token) return
       const tracks = await searchTracks(token, trimmed)
       setResults(tracks)
-    } catch {
-      setError('Search failed. Please try again.')
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Search failed. Please try again.')
     } finally {
       setSearching(false)
     }
@@ -68,8 +68,8 @@ export function SpotifySearchPanel({ getAccessToken, deviceId, currentTrackId }:
       const token = await getAccessToken()
       if (!token) return
       await playTrackNow(token, deviceId, track.uri)
-    } catch {
-      setError('Could not start playback. Make sure Spotify Premium is active on this account.')
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not start playback.')
     }
   }
 
@@ -85,8 +85,8 @@ export function SpotifySearchPanel({ getAccessToken, deviceId, currentTrackId }:
       setQueuedTrackId(track.id)
       setTimeout(() => setQueuedTrackId((current) => (current === track.id ? null : current)), 2000)
       if (queueOpen) void loadQueue()
-    } catch {
-      setError('Could not add that track to the queue.')
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not add that track to the queue.')
     }
   }
 
@@ -97,8 +97,8 @@ export function SpotifySearchPanel({ getAccessToken, deviceId, currentTrackId }:
       if (!token) return
       const result = await getQueue(token)
       setQueue(result.queue)
-    } catch {
-      setError('Could not load the queue.')
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not load the queue.')
     } finally {
       setLoadingQueue(false)
     }

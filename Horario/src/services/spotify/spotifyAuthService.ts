@@ -26,6 +26,16 @@ function toTokens(payload: TokenResponse): SpotifyTokens {
   }
 }
 
+async function readTokenErrorDetail(response: Response): Promise<string> {
+  const body = await response.text().catch(() => '')
+  try {
+    const parsed = JSON.parse(body)
+    return parsed?.error_description || parsed?.error || body
+  } catch {
+    return body
+  }
+}
+
 export async function exchangeCodeForTokens(
   code: string,
   codeVerifier: string,
@@ -43,7 +53,8 @@ export async function exchangeCodeForTokens(
   })
 
   if (!response.ok) {
-    throw new Error('Could not connect to Spotify. Please try again.')
+    const detail = await readTokenErrorDetail(response)
+    throw new Error(`Could not connect to Spotify: ${detail}`)
   }
 
   const payload = (await response.json()) as TokenResponse
@@ -66,7 +77,8 @@ export async function refreshAccessToken(refreshToken: string): Promise<SpotifyT
   })
 
   if (!response.ok) {
-    throw new Error('Your Spotify connection expired. Please reconnect.')
+    const detail = await readTokenErrorDetail(response)
+    throw new Error(`Your Spotify connection needs to be reconnected: ${detail}`)
   }
 
   const payload = (await response.json()) as TokenResponse

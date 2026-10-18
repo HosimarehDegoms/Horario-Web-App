@@ -7,7 +7,15 @@ async function spotifyFetch(accessToken: string, path: string, init?: RequestIni
     headers: { Authorization: `Bearer ${accessToken}`, ...(init?.headers ?? {}) },
   })
   if (!response.ok && response.status !== 204) {
-    throw new Error(`Spotify request failed (${response.status})`)
+    const body = await response.text().catch(() => '')
+    let detail = body
+    try {
+      const parsed = JSON.parse(body)
+      detail = parsed?.error?.message || parsed?.error_description || body
+    } catch {
+      // body wasn't JSON; use it as-is
+    }
+    throw new Error(`Spotify request failed (${response.status}): ${String(detail).slice(0, 200)}`)
   }
   return response
 }
