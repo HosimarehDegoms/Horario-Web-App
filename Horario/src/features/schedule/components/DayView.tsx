@@ -25,16 +25,17 @@ export function DayView({ entries, onEdit, onDelete }: DayViewProps) {
 
   return (
     <Card title={DAY_OF_WEEK_LABELS[selectedDay]}>
-      <div className="mb-4 flex gap-2 overflow-x-auto pb-1">
+      <div role="group" aria-label="Day of week" className="mb-5 flex gap-1.5 overflow-x-auto pb-1">
         {DAY_OF_WEEK_ORDER.map((day) => (
           <button
             key={day}
             type="button"
+            aria-pressed={day === selectedDay}
             onClick={() => setSelectedDay(day)}
-            className={`shrink-0 rounded-full px-3 py-1.5 text-sm font-medium transition-[background-color,box-shadow,transform] duration-200 ease-clay motion-reduce:transition-none ${
+            className={`min-h-10 min-w-12 shrink-0 cursor-pointer rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 ${
               day === selectedDay
-                ? 'bg-primary-600 text-white shadow-clay'
-                : 'bg-slate-100 text-slate-600 hover:-translate-y-0.5 hover:bg-slate-200'
+                ? 'bg-slate-900 text-white'
+                : 'text-slate-600 hover:bg-slate-200/70 hover:text-slate-900'
             }`}
           >
             {DAY_OF_WEEK_SHORT_LABELS[day]}

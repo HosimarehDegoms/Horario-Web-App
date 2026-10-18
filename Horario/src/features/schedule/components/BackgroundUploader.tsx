@@ -48,7 +48,7 @@ export function BackgroundUploader({ imageUrl, onUpload, onRemove }: BackgroundU
 
       {imageUrl ? (
         <div
-          className="relative mt-2 h-28 overflow-hidden rounded-clay-sm bg-cover bg-center shadow-clay-inset"
+          className="relative mt-2 h-28 overflow-hidden rounded-clay-sm bg-cover bg-center "
           style={{ backgroundImage: `url(${imageUrl})` }}
         >
           <button

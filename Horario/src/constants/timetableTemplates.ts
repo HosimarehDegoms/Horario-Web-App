@@ -43,7 +43,7 @@ export interface TimetableTemplateStyle {
 }
 
 export const DEFAULT_TIMETABLE_TEMPLATE_STYLE: TimetableTemplateStyle = {
-  cardClassName: 'border border-white/60 bg-white shadow-clay hover:shadow-clay-hover',
+  cardClassName: 'border border-slate-200 bg-white shadow-clay hover:shadow-clay-hover',
   tinted: false,
   showColorDot: true,
   density: 'cozy',
@@ -78,7 +78,7 @@ export const TIMETABLE_TEMPLATE_STYLES: Record<TimetableTemplate, TimetableTempl
     vivid: false,
   },
   compact: {
-    cardClassName: 'border border-white/60 bg-white shadow-clay hover:shadow-clay-hover',
+    cardClassName: 'border border-slate-200 bg-white shadow-clay hover:shadow-clay-hover',
     tinted: false,
     showColorDot: true,
     density: 'compact',

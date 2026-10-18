@@ -41,7 +41,7 @@ export function MonthView({ entries, tasks, referenceDate }: MonthViewProps) {
         <button
           type="button"
           onClick={() => setCursor((current) => new Date(current.getFullYear(), current.getMonth() - 1, 1))}
-          className="rounded-full px-2.5 py-1 text-sm font-medium text-slate-500 transition-colors duration-150 hover:bg-slate-100 hover:text-slate-800"
+          className="rounded-md min-h-9 px-3 py-1 text-sm font-medium text-slate-600 transition-colors duration-150 hover:bg-slate-100 hover:text-slate-800"
           aria-label="Previous month"
         >
           ←
@@ -50,7 +50,7 @@ export function MonthView({ entries, tasks, referenceDate }: MonthViewProps) {
         <button
           type="button"
           onClick={() => setCursor((current) => new Date(current.getFullYear(), current.getMonth() + 1, 1))}
-          className="rounded-full px-2.5 py-1 text-sm font-medium text-slate-500 transition-colors duration-150 hover:bg-slate-100 hover:text-slate-800"
+          className="rounded-md min-h-9 px-3 py-1 text-sm font-medium text-slate-600 transition-colors duration-150 hover:bg-slate-100 hover:text-slate-800"
           aria-label="Next month"
         >
           →
@@ -77,7 +77,7 @@ export function MonthView({ entries, tasks, referenceDate }: MonthViewProps) {
             <div
               key={date.toISOString()}
               className={`min-h-[5.5rem] rounded-clay-sm border p-1 text-left align-top ${
-                isCurrentMonth ? 'border-white/60 bg-white' : 'border-transparent bg-slate-50/60'
+                isCurrentMonth ? 'border-slate-200 bg-white' : 'border-transparent bg-slate-50/60'
               }`}
             >
               <span

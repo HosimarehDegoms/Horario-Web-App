@@ -24,7 +24,7 @@ export function FlatScheduleTable({ entries, onEdit, onDelete, density }: FlatSc
   )
 
   return (
-    <div className="overflow-x-auto rounded-clay-sm border border-white/60 bg-white shadow-clay">
+    <div className="overflow-x-auto rounded-clay-sm border border-slate-200 bg-white shadow-clay">
       <table className="w-full min-w-[560px] border-collapse text-sm">
         <thead>
           <tr className="border-b border-slate-200 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -52,14 +52,14 @@ export function FlatScheduleTable({ entries, onEdit, onDelete, density }: FlatSc
                   <button
                     type="button"
                     onClick={() => onEdit(entry)}
-                    className="rounded-full px-2 py-1 text-xs font-medium text-slate-500 transition-colors duration-150 hover:bg-slate-100 hover:text-slate-700"
+                    className="min-h-8 rounded-md px-2.5 py-1 text-xs font-medium text-slate-600 transition-colors duration-150 hover:bg-slate-100 hover:text-slate-700"
                   >
                     Edit
                   </button>
                   <button
                     type="button"
                     onClick={() => onDelete(entry)}
-                    className="rounded-full px-2 py-1 text-xs font-medium text-red-500 transition-colors duration-150 hover:bg-red-50 hover:text-red-700"
+                    className="min-h-8 rounded-md px-2.5 py-1 text-xs font-medium text-red-600 transition-colors duration-150 hover:bg-red-50 hover:text-red-700"
                   >
                     Delete
                   </button>

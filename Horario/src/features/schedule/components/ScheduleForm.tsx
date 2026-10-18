@@ -186,7 +186,7 @@ export function ScheduleForm({ initialEntry, existingEntries, onSubmit, onCancel
       />
 
       {conflicts.length > 0 && (
-        <div className="rounded-clay-sm border border-amber-300 bg-amber-50 p-3 text-sm text-amber-800 shadow-clay-inset">
+        <div className="rounded-clay-sm border border-amber-300 bg-amber-50 p-3 text-sm text-amber-800 ">
           <p className="font-medium">Schedule conflict detected</p>
           <ul className="mt-1 list-disc space-y-1 pl-5">
             {conflicts.map((conflict) => {

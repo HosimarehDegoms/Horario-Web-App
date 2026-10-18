@@ -32,7 +32,7 @@ export function SpreadsheetTable({ entries, onEdit, onDelete }: SpreadsheetTable
   )
 
   return (
-    <div className="overflow-x-auto rounded-clay-sm border border-white/60 bg-white shadow-clay">
+    <div className="overflow-x-auto rounded-clay-sm border border-slate-200 bg-white shadow-clay">
       <table className="w-full min-w-[720px] border-collapse text-xs">
         <thead>
           <tr>

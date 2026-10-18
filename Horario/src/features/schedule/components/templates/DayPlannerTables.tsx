@@ -28,7 +28,7 @@ export function DayPlannerTables({ entries, onEdit, onDelete }: DayPlannerTables
           return (
             <div
               key={day}
-              className="overflow-hidden rounded-clay-sm border-l-4 border-sky-300 bg-white shadow-clay-inset"
+              className="overflow-hidden rounded-clay-sm border-l-4 border-sky-300 bg-white "
             >
               <div className="border-b border-sky-200/60 bg-sky-100/60 px-3 py-2 text-sm font-semibold text-sky-900">
                 {DAY_OF_WEEK_LABELS[day]}

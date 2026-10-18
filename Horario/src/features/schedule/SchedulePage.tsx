@@ -20,6 +20,12 @@ import { TIMETABLE_TEMPLATE_STYLES } from '../../constants/timetableTemplates'
 import type { CreateScheduleInput, ScheduleEntry } from '../../types/schedule'
 
 type ViewMode = 'day' | 'week' | 'month'
+const VIEW_MODES: { id: ViewMode; label: string }[] = [
+  { id: 'day', label: 'Day' },
+  { id: 'week', label: 'Week' },
+  { id: 'month', label: 'Month' },
+]
+
 type FormState = { mode: 'create' } | { mode: 'edit'; entry: ScheduleEntry } | null
 
 export function SchedulePage() {
@@ -68,13 +74,16 @@ export function SchedulePage() {
   const templateStyle = preferences ? TIMETABLE_TEMPLATE_STYLES[preferences.template] : undefined
 
   return (
-    <div className="mx-auto max-w-6xl space-y-6 px-4 py-6 sm:px-6 lg:px-8">
-      <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
-        <h1 className="text-xl font-semibold text-slate-900 sm:text-2xl">Schedule</h1>
+    <div className="mx-auto max-w-6xl space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <div className="flex flex-wrap items-end justify-between gap-3 border-b border-slate-200 pb-5 print:hidden">
+        <div>
+          <p className="text-sm font-medium text-slate-500">Your timetable</p>
+          <h1 className="mt-1 text-3xl leading-tight font-semibold text-slate-900 sm:text-4xl">Schedule</h1>
+        </div>
         <div className="flex flex-wrap gap-2">
           {preferences && (
             <Button type="button" variant="secondary" onClick={() => setDesignModalOpen(true)}>
-              Change Design
+              Change design
             </Button>
           )}
           {!isLoading && !loadError && entries.length > 0 && (
@@ -82,7 +91,7 @@ export function SchedulePage() {
               Export
             </Button>
           )}
-          <Button onClick={() => setFormState({ mode: 'create' })}>Add Schedule</Button>
+          <Button onClick={() => setFormState({ mode: 'create' })}>Add entry</Button>
         </div>
       </div>
 
@@ -106,12 +115,12 @@ export function SchedulePage() {
               : undefined
           }
         >
-          {preferences?.backgroundImageUrl && <div className="absolute inset-0 bg-white/75" aria-hidden="true" />}
+          {preferences?.backgroundImageUrl && <div className="absolute inset-0 bg-slate-50/80" aria-hidden="true" />}
           <div className="relative space-y-4 p-3 sm:p-4">
             {!preferences && (
               <div
                 data-export-ignore="true"
-                className="rounded-clay-sm border border-dashed border-primary-300 bg-primary-50/70 px-4 py-3 text-sm text-primary-700 print:hidden"
+                className="rounded-clay-sm border border-dashed border-slate-300 px-4 py-3 text-sm text-slate-600 print:hidden"
               >
                 Your schedule isn't designed yet.{' '}
                 <button
@@ -119,7 +128,7 @@ export function SchedulePage() {
                   onClick={() => setDesignModalOpen(true)}
                   className="font-semibold underline underline-offset-2"
                 >
-                  Create a Schedule
+                  Create a schedule
                 </button>{' '}
                 to pick a template and background.
               </div>
@@ -127,35 +136,25 @@ export function SchedulePage() {
 
             <div
               data-export-ignore="true"
-              className="inline-flex rounded-clay-sm bg-slate-100 p-1 shadow-clay-inset print:hidden"
+              role="group"
+              aria-label="Schedule view"
+              className="inline-flex rounded-clay-sm bg-slate-200/70 p-1 print:hidden"
             >
-              <button
-                type="button"
-                onClick={() => setViewMode('day')}
-                className={`rounded-clay-sm px-3 py-1.5 text-sm font-medium transition-[background-color,box-shadow,transform] duration-200 ease-clay motion-reduce:transition-none ${
-                  viewMode === 'day' ? 'bg-white text-slate-900 shadow-clay' : 'text-slate-500 hover:text-slate-700'
-                }`}
-              >
-                Day
-              </button>
-              <button
-                type="button"
-                onClick={() => setViewMode('week')}
-                className={`rounded-clay-sm px-3 py-1.5 text-sm font-medium transition-[background-color,box-shadow,transform] duration-200 ease-clay motion-reduce:transition-none ${
-                  viewMode === 'week' ? 'bg-white text-slate-900 shadow-clay' : 'text-slate-500 hover:text-slate-700'
-                }`}
-              >
-                Week
-              </button>
-              <button
-                type="button"
-                onClick={() => setViewMode('month')}
-                className={`rounded-clay-sm px-3 py-1.5 text-sm font-medium transition-[background-color,box-shadow,transform] duration-200 ease-clay motion-reduce:transition-none ${
-                  viewMode === 'month' ? 'bg-white text-slate-900 shadow-clay' : 'text-slate-500 hover:text-slate-700'
-                }`}
-              >
-                Month
-              </button>
+              {VIEW_MODES.map((mode) => (
+                <button
+                  key={mode.id}
+                  type="button"
+                  aria-pressed={viewMode === mode.id}
+                  onClick={() => setViewMode(mode.id)}
+                  className={`min-h-9 min-w-16 cursor-pointer rounded-md px-4 py-1.5 text-sm font-medium transition-[background-color,color,box-shadow] duration-200 ease-clay focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 motion-reduce:transition-none ${
+                    viewMode === mode.id
+                      ? 'bg-white text-slate-900 shadow-clay'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  {mode.label}
+                </button>
+              ))}
             </div>
 
             <TimetableTemplateStyleContext.Provider value={templateStyle ?? TIMETABLE_TEMPLATE_STYLES.weekly_grid}>
@@ -217,7 +216,7 @@ export function SchedulePage() {
         getScheduleNode={() => exportRef.current}
       />
 
-      <Fab label="Add Schedule" onClick={() => setFormState({ mode: 'create' })} />
+      <Fab label="Add entry" onClick={() => setFormState({ mode: 'create' })} />
     </div>
   )
 }
