@@ -23,18 +23,44 @@ declare global {
 }
 
 const SDK_SCRIPT_SRC = 'https://sdk.scdn.co/spotify-player.js'
+const SDK_LOAD_TIMEOUT_MS = 10_000
 let sdkLoadPromise: Promise<void> | null = null
+
+/**
+ * Facebook/Messenger/Instagram/Line/WeChat in-app browsers wrap a stripped-down WebView that
+ * blocks the EME (DRM) APIs the Web Playback SDK needs to play audio. On those, the SDK script
+ * can load but then hang indefinitely instead of ever calling back — which otherwise leaves the
+ * caller `await`-ing a promise that never resolves. Detect that case up front and refuse to try.
+ */
+function isSpotifyPlaybackSupported(): boolean {
+  if (typeof navigator === 'undefined') return false
+  const ua = navigator.userAgent || ''
+  if (/FBAN|FBAV|FB_IAB|Instagram|Line\/|MicroMessenger|WhatsApp/i.test(ua)) return false
+  return 'requestMediaKeySystemAccess' in navigator
+}
 
 function loadSdk(): Promise<void> {
   if (window.Spotify) return Promise.resolve()
   if (sdkLoadPromise) return sdkLoadPromise
 
-  sdkLoadPromise = new Promise((resolve) => {
-    window.onSpotifyWebPlaybackSDKReady = () => resolve()
+  sdkLoadPromise = new Promise<void>((resolve, reject) => {
+    const timeout = setTimeout(() => reject(new Error('Spotify SDK did not become ready in time.')), SDK_LOAD_TIMEOUT_MS)
+    window.onSpotifyWebPlaybackSDKReady = () => {
+      clearTimeout(timeout)
+      resolve()
+    }
     const script = document.createElement('script')
     script.src = SDK_SCRIPT_SRC
     script.async = true
+    script.onerror = () => {
+      clearTimeout(timeout)
+      reject(new Error('Spotify SDK script failed to load.'))
+    }
     document.body.appendChild(script)
+  }).catch((err) => {
+    // Let the next connection attempt retry instead of staying rejected forever.
+    sdkLoadPromise = null
+    throw err
   })
   return sdkLoadPromise
 }
@@ -59,18 +85,36 @@ export function useSpotifyPlayer(getAccessToken: () => Promise<string | null>, e
     let cancelled = false
 
     async function setup() {
-      await loadSdk()
+      if (!isSpotifyPlaybackSupported()) {
+        if (!cancelled) {
+          setError('Spotify playback needs a full browser (Safari/Chrome) — it can\'t run inside an in-app browser like Messenger or Instagram.')
+        }
+        return
+      }
+
+      try {
+        await loadSdk()
+      } catch {
+        if (!cancelled) setError('Could not load the Spotify player. Please try again in Safari or Chrome.')
+        return
+      }
       if (cancelled || !window.Spotify) return
 
-      const player = new window.Spotify.Player({
-        name: 'Horario Focus Player',
-        getOAuthToken: (callback) => {
-          void getAccessToken().then((token) => {
-            if (token) callback(token)
-          })
-        },
-        volume: 0.6,
-      })
+      let player: SpotifyPlayerInstance
+      try {
+        player = new window.Spotify.Player({
+          name: 'Horario Focus Player',
+          getOAuthToken: (callback) => {
+            void getAccessToken().then((token) => {
+              if (token) callback(token)
+            })
+          },
+          volume: 0.6,
+        })
+      } catch {
+        if (!cancelled) setError('Could not start the Spotify player in this browser.')
+        return
+      }
 
       player.addListener('ready', (data) => {
         const { device_id } = data as { device_id: string }
@@ -119,8 +163,12 @@ export function useSpotifyPlayer(getAccessToken: () => Promise<string | null>, e
         })
       })
 
-      await player.connect()
-      playerRef.current = player
+      try {
+        await player.connect()
+        playerRef.current = player
+      } catch {
+        if (!cancelled) setError('Could not start the Spotify player in this browser.')
+      }
     }
 
     void setup()
