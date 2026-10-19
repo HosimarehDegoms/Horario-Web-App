@@ -4,7 +4,6 @@ import { LoadingState } from '../../../components/ui/LoadingState'
 import { useSpotifyConnection } from '../../../hooks/useSpotifyConnection'
 import { useSpotifyPlayer } from '../../../hooks/useSpotifyPlayer'
 import { searchTopPlaylist, pausePlayback, playContext, resumePlayback, skipToNext } from '../../../services/spotify/spotifyApiService'
-import { SpotifySearchPanel } from './SpotifySearchPanel'
 import { LOFI_SEARCH_QUERIES } from '../../../constants/spotify'
 import type { SpotifyPlaylistSummary } from '../../../types/spotify'
 
@@ -192,15 +191,6 @@ export function SpotifyMusicPanel() {
             ))}
           </ul>
         )}
-      </div>
-
-      <div className="border-t border-slate-100 pt-4">
-        <p className="mb-2 text-sm font-medium text-slate-700">Search for any song, artist, or genre</p>
-        <SpotifySearchPanel
-          getAccessToken={spotify.getAccessToken}
-          deviceId={player.deviceId}
-          currentTrackId={player.playback.track?.id ?? null}
-        />
       </div>
     </div>
   )

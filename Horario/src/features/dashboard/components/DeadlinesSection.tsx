@@ -8,25 +8,19 @@ interface DeadlinesSectionProps {
   referenceDate: Date
 }
 
+/** Overdue first (most urgent), then upcoming — one compact card instead of two full-width ones,
+ * so deadlines read as secondary context rather than competing with today's schedule/tasks. */
 export function DeadlinesSection({ overdueTasks, upcomingDeadlines, referenceDate }: DeadlinesSectionProps) {
+  const combined = [...overdueTasks, ...upcomingDeadlines]
+
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      <Card title="Overdue Tasks">
-        <DeadlineList
-          tasks={overdueTasks}
-          referenceDate={referenceDate}
-          emptyTitle="Nothing overdue"
-          emptyDescription="You're on top of your deadlines."
-        />
-      </Card>
-      <Card title="Upcoming Deadlines">
-        <DeadlineList
-          tasks={upcomingDeadlines}
-          referenceDate={referenceDate}
-          emptyTitle="No upcoming deadlines"
-          emptyDescription="Tasks with a due date will show up here."
-        />
-      </Card>
-    </div>
+    <Card title="Deadlines">
+      <DeadlineList
+        tasks={combined}
+        referenceDate={referenceDate}
+        emptyTitle="Nothing due"
+        emptyDescription="You're on top of your deadlines."
+      />
+    </Card>
   )
 }

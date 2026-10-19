@@ -8,7 +8,7 @@ interface ProductivityCardProps {
 
 export function ProductivityCard({ label, summary }: ProductivityCardProps) {
   return (
-    <div className="rounded-clay-sm border border-white/60 bg-white p-4 shadow-clay">
+    <div className="rounded-clay-sm border border-slate-200 bg-white/90 p-4">
       <div className="flex items-baseline justify-between">
         <p className="text-sm font-medium text-slate-700">{label}</p>
         <p className="text-sm font-semibold text-slate-900">{summary.completionRate}%</p>
