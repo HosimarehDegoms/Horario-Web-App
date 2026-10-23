@@ -1,0 +1,884 @@
+{
+  "Horario/eslint.config.js": {
+    "mtime": 1789644602.3245761,
+    "seen": 1792744055.6862059,
+    "ast_hash": "bb6a1ef0ae166322b91f9d65faae7695",
+    "semantic_hash": "bb6a1ef0ae166322b91f9d65faae7695"
+  },
+  "Horario/package.json": {
+    "mtime": 1791732245.3494499,
+    "seen": 1792744055.6862059,
+    "ast_hash": "ce36dc1a2af47cdc344262512be112fa",
+    "semantic_hash": "ce36dc1a2af47cdc344262512be112fa"
+  },
+  "Horario/src/App.tsx": {
+    "mtime": 1792394673.0994287,
+    "seen": 1792744055.6862059,
+    "ast_hash": "7e69b2a2c81f2e07caba0f2821034dfe",
+    "semantic_hash": "7e69b2a2c81f2e07caba0f2821034dfe"
+  },
+  "Horario/src/app/providers/AuthContext.ts": {
+    "mtime": 1789649082.163541,
+    "seen": 1792744055.6862059,
+    "ast_hash": "66c5b7b2f0287ff2b8809090d5a2ab95",
+    "semantic_hash": "66c5b7b2f0287ff2b8809090d5a2ab95"
+  },
+  "Horario/src/app/providers/AuthProvider.tsx": {
+    "mtime": 1789649097.6389875,
+    "seen": 1792744055.6862059,
+    "ast_hash": "7eca02b902f3f46458541475e3da8072",
+    "semantic_hash": "7eca02b902f3f46458541475e3da8072"
+  },
+  "Horario/src/app/providers/useAuth.ts": {
+    "mtime": 1789649087.0540314,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b7eef39e95243b83ae111161ac52f628",
+    "semantic_hash": "b7eef39e95243b83ae111161ac52f628"
+  },
+  "Horario/src/app/routes/ProtectedRoute.tsx": {
+    "mtime": 1792324443.786224,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f013f2582765fbbdcc5de3409a2ed06b",
+    "semantic_hash": "f013f2582765fbbdcc5de3409a2ed06b"
+  },
+  "Horario/src/app/routes/PublicOnlyRoute.tsx": {
+    "mtime": 1792324443.8133254,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f9cc3d19f1fbf6ada41c274e3d8635df",
+    "semantic_hash": "f9cc3d19f1fbf6ada41c274e3d8635df"
+  },
+  "Horario/src/app/theme/activeThemeContext.ts": {
+    "mtime": 1791738324.6355178,
+    "seen": 1792744055.6862059,
+    "ast_hash": "d7556adfd1dd7cb819725f5d2e6de454",
+    "semantic_hash": "d7556adfd1dd7cb819725f5d2e6de454"
+  },
+  "Horario/src/app/theme/useActiveThemePreset.ts": {
+    "mtime": 1791738328.7452035,
+    "seen": 1792744055.6862059,
+    "ast_hash": "e7606eb5c8407ca47d97b775793e528d",
+    "semantic_hash": "e7606eb5c8407ca47d97b775793e528d"
+  },
+  "Horario/src/components/dashboard/DeadlineList.tsx": {
+    "mtime": 1792394442.5095057,
+    "seen": 1792744055.6862059,
+    "ast_hash": "d2da0e3657a3e894466077387fa3f64a",
+    "semantic_hash": "d2da0e3657a3e894466077387fa3f64a"
+  },
+  "Horario/src/components/dashboard/ProductivityCard.tsx": {
+    "mtime": 1792394447.5126574,
+    "seen": 1792744055.6862059,
+    "ast_hash": "8558b6be631c484ee8aea593ef212bd7",
+    "semantic_hash": "8558b6be631c484ee8aea593ef212bd7"
+  },
+  "Horario/src/components/dashboard/TodaySnapshotStrip.tsx": {
+    "mtime": 1792394419.3223062,
+    "seen": 1792744055.6862059,
+    "ast_hash": "a412f341eb3a63fad30ddb3fa47e2b17",
+    "semantic_hash": "a412f341eb3a63fad30ddb3fa47e2b17"
+  },
+  "Horario/src/components/illustrations/Mascot.tsx": {
+    "mtime": 1791739011.1008244,
+    "seen": 1792744055.6862059,
+    "ast_hash": "86452024c6bf7ae6c06cd848466e0e08",
+    "semantic_hash": "86452024c6bf7ae6c06cd848466e0e08"
+  },
+  "Horario/src/components/layout/BottomNav.tsx": {
+    "mtime": 1792324413.6507123,
+    "seen": 1792744055.6862059,
+    "ast_hash": "507df9d52959559f69bf826f18452c15",
+    "semantic_hash": "507df9d52959559f69bf826f18452c15"
+  },
+  "Horario/src/components/layout/MobileTopBar.tsx": {
+    "mtime": 1792324413.6507123,
+    "seen": 1792744055.6862059,
+    "ast_hash": "c91b57db56d3aaf8d12788193dbd39cf",
+    "semantic_hash": "c91b57db56d3aaf8d12788193dbd39cf"
+  },
+  "Horario/src/components/layout/NotificationsToggle.tsx": {
+    "mtime": 1791731991.9561298,
+    "seen": 1792744055.6862059,
+    "ast_hash": "39f3bbc33fffb2c5e4c577606a89f315",
+    "semantic_hash": "39f3bbc33fffb2c5e4c577606a89f315"
+  },
+  "Horario/src/components/layout/Sidebar.tsx": {
+    "mtime": 1792324413.649335,
+    "seen": 1792744055.6862059,
+    "ast_hash": "4c7214772633e87738e42620f243ecb9",
+    "semantic_hash": "4c7214772633e87738e42620f243ecb9"
+  },
+  "Horario/src/components/layout/ThemedBackgroundPattern.tsx": {
+    "mtime": 1791739369.020708,
+    "seen": 1792744055.6862059,
+    "ast_hash": "7b3bb8795ea7c90a1c1db03fa0f48ad1",
+    "semantic_hash": "7b3bb8795ea7c90a1c1db03fa0f48ad1"
+  },
+  "Horario/src/components/layout/icons.tsx": {
+    "mtime": 1791736588.276902,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f1398ff0abeed84c77fc257adc751b3b",
+    "semantic_hash": "f1398ff0abeed84c77fc257adc751b3b"
+  },
+  "Horario/src/components/layout/navItems.tsx": {
+    "mtime": 1791736598.043931,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f948d1e2e868ab408e35df55dd667ea0",
+    "semantic_hash": "f948d1e2e868ab408e35df55dd667ea0"
+  },
+  "Horario/src/components/schedule/ColorSwatchPicker.tsx": {
+    "mtime": 1789661685.1322112,
+    "seen": 1792744055.6862059,
+    "ast_hash": "a435167d7628d7d28488c2e3b3ac24a5",
+    "semantic_hash": "a435167d7628d7d28488c2e3b3ac24a5"
+  },
+  "Horario/src/components/schedule/ScheduleCard.tsx": {
+    "mtime": 1792333934.2202206,
+    "seen": 1792744055.6862059,
+    "ast_hash": "9be087a1a106f56cbecf38c40da9407e",
+    "semantic_hash": "9be087a1a106f56cbecf38c40da9407e"
+  },
+  "Horario/src/components/tasks/TaskCard.tsx": {
+    "mtime": 1791731906.5703948,
+    "seen": 1792744055.6862059,
+    "ast_hash": "77503a6f428d0709d0aa43f3ff6860d3",
+    "semantic_hash": "77503a6f428d0709d0aa43f3ff6860d3"
+  },
+  "Horario/src/components/ui/Badge.tsx": {
+    "mtime": 1792324413.6448655,
+    "seen": 1792744055.6862059,
+    "ast_hash": "2bb6a0e96ab7dcf0ba3c9005348be3a8",
+    "semantic_hash": "2bb6a0e96ab7dcf0ba3c9005348be3a8"
+  },
+  "Horario/src/components/ui/Button.tsx": {
+    "mtime": 1792324413.6434224,
+    "seen": 1792744055.6862059,
+    "ast_hash": "c0c067055bf1e4cc390d23f27f228cd7",
+    "semantic_hash": "c0c067055bf1e4cc390d23f27f228cd7"
+  },
+  "Horario/src/components/ui/Card.tsx": {
+    "mtime": 1792324413.6434224,
+    "seen": 1792744055.6862059,
+    "ast_hash": "e141401433b79bdd68059b9c95f50f7e",
+    "semantic_hash": "e141401433b79bdd68059b9c95f50f7e"
+  },
+  "Horario/src/components/ui/ConfirmDialog.tsx": {
+    "mtime": 1789643052.6015663,
+    "seen": 1792744055.6862059,
+    "ast_hash": "75e374587488c784f084bf09987e7009",
+    "semantic_hash": "75e374587488c784f084bf09987e7009"
+  },
+  "Horario/src/components/ui/EmptyState.tsx": {
+    "mtime": 1792324413.6468728,
+    "seen": 1792744055.6862059,
+    "ast_hash": "44b7b76ca08a0ac70683fcd671564b55",
+    "semantic_hash": "44b7b76ca08a0ac70683fcd671564b55"
+  },
+  "Horario/src/components/ui/ErrorState.tsx": {
+    "mtime": 1792324413.6468728,
+    "seen": 1792744055.6862059,
+    "ast_hash": "d3345f905dcd777be01c2b765d9cd5cc",
+    "semantic_hash": "d3345f905dcd777be01c2b765d9cd5cc"
+  },
+  "Horario/src/components/ui/Fab.tsx": {
+    "mtime": 1792324413.6507123,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b0f06a89885f51950ab40378ce3a6edd",
+    "semantic_hash": "b0f06a89885f51950ab40378ce3a6edd"
+  },
+  "Horario/src/components/ui/Input.tsx": {
+    "mtime": 1792324413.6448655,
+    "seen": 1792744055.6862059,
+    "ast_hash": "ba52975b9dc1f9bc64e2e9da453698ea",
+    "semantic_hash": "ba52975b9dc1f9bc64e2e9da453698ea"
+  },
+  "Horario/src/components/ui/LoadingState.tsx": {
+    "mtime": 1792324413.6483274,
+    "seen": 1792744055.6862059,
+    "ast_hash": "9c9c61d9229fb88ac5d20aa711299f74",
+    "semantic_hash": "9c9c61d9229fb88ac5d20aa711299f74"
+  },
+  "Horario/src/components/ui/Modal.tsx": {
+    "mtime": 1792324413.649335,
+    "seen": 1792744055.6862059,
+    "ast_hash": "70443040f365018353a3e3e4e1326e9d",
+    "semantic_hash": "70443040f365018353a3e3e4e1326e9d"
+  },
+  "Horario/src/components/ui/ProgressBar.tsx": {
+    "mtime": 1792324413.6468728,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f37ba8d77a37121efbf0bbc7dc8420f0",
+    "semantic_hash": "f37ba8d77a37121efbf0bbc7dc8420f0"
+  },
+  "Horario/src/components/ui/Select.tsx": {
+    "mtime": 1792324413.6458716,
+    "seen": 1792744055.6862059,
+    "ast_hash": "ca86cd5d62bdec410270d304432ba564",
+    "semantic_hash": "ca86cd5d62bdec410270d304432ba564"
+  },
+  "Horario/src/components/ui/Textarea.tsx": {
+    "mtime": 1792324413.6458716,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f68ea64f4010378b1248c3d0886bef1a",
+    "semantic_hash": "f68ea64f4010378b1248c3d0886bef1a"
+  },
+  "Horario/src/constants/backgroundUpload.ts": {
+    "mtime": 1791702596.4927719,
+    "seen": 1792744055.6862059,
+    "ast_hash": "c75b0ca0b4504406c28bae81f065bd1d",
+    "semantic_hash": "c75b0ca0b4504406c28bae81f065bd1d"
+  },
+  "Horario/src/constants/focus.ts": {
+    "mtime": 1791731306.6723447,
+    "seen": 1792744055.6862059,
+    "ast_hash": "bca43fd4dc85beae787f15847bcf1e84",
+    "semantic_hash": "bca43fd4dc85beae787f15847bcf1e84"
+  },
+  "Horario/src/constants/schedule.ts": {
+    "mtime": 1789661633.7225156,
+    "seen": 1792744055.6862059,
+    "ast_hash": "43b44451883ccaf4e99ca0b6cb84f9da",
+    "semantic_hash": "43b44451883ccaf4e99ca0b6cb84f9da"
+  },
+  "Horario/src/constants/spotify.ts": {
+    "mtime": 1792394165.1674366,
+    "seen": 1792744055.6862059,
+    "ast_hash": "c7f03d97c283742cff1d64b049147745",
+    "semantic_hash": "c7f03d97c283742cff1d64b049147745"
+  },
+  "Horario/src/constants/tasks.ts": {
+    "mtime": 1791731849.1126752,
+    "seen": 1792744055.6862059,
+    "ast_hash": "df4378ee09ff18e1b3bf9be133d7f6ed",
+    "semantic_hash": "df4378ee09ff18e1b3bf9be133d7f6ed"
+  },
+  "Horario/src/constants/themeColors.ts": {
+    "mtime": 1791739051.35339,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b8f2e27d2daa4109626269d0506037cc",
+    "semantic_hash": "b8f2e27d2daa4109626269d0506037cc"
+  },
+  "Horario/src/constants/timetableTemplates.ts": {
+    "mtime": 1792333934.2207253,
+    "seen": 1792744055.6862059,
+    "ast_hash": "14c9b9d206648608ccff0ba7bb7c3be4",
+    "semantic_hash": "14c9b9d206648608ccff0ba7bb7c3be4"
+  },
+  "Horario/src/features/auth/LoginPage.tsx": {
+    "mtime": 1792324413.6529212,
+    "seen": 1792744055.6862059,
+    "ast_hash": "5d3272747a56dd9fdf6a5449102bdfc5",
+    "semantic_hash": "5d3272747a56dd9fdf6a5449102bdfc5"
+  },
+  "Horario/src/features/auth/SignupPage.tsx": {
+    "mtime": 1792324443.8710785,
+    "seen": 1792744055.6862059,
+    "ast_hash": "1d7f110dadc862eff7696e976f430728",
+    "semantic_hash": "1d7f110dadc862eff7696e976f430728"
+  },
+  "Horario/src/features/auth/components/LoginForm.tsx": {
+    "mtime": 1789648963.1495337,
+    "seen": 1792744055.6862059,
+    "ast_hash": "18b82dd539269654e421c29aea35e847",
+    "semantic_hash": "18b82dd539269654e421c29aea35e847"
+  },
+  "Horario/src/features/auth/components/SignupForm.tsx": {
+    "mtime": 1789648976.008988,
+    "seen": 1792744055.6862059,
+    "ast_hash": "ad3391f2b875157b4847fe17c3d16ef4",
+    "semantic_hash": "ad3391f2b875157b4847fe17c3d16ef4"
+  },
+  "Horario/src/features/dashboard/DashboardPage.tsx": {
+    "mtime": 1792394470.8327987,
+    "seen": 1792744055.6862059,
+    "ast_hash": "8e76bf49f49093edbf0144f7ce891088",
+    "semantic_hash": "8e76bf49f49093edbf0144f7ce891088"
+  },
+  "Horario/src/features/dashboard/components/DateHeader.tsx": {
+    "mtime": 1792394631.1725655,
+    "seen": 1792744055.6862059,
+    "ast_hash": "e9496743d8236a716bffdca46ee58a45",
+    "semantic_hash": "e9496743d8236a716bffdca46ee58a45"
+  },
+  "Horario/src/features/dashboard/components/DeadlinesSection.tsx": {
+    "mtime": 1792394436.2792945,
+    "seen": 1792744055.6862059,
+    "ast_hash": "12744935c95e148a5dbf0fe6e08b1c23",
+    "semantic_hash": "12744935c95e148a5dbf0fe6e08b1c23"
+  },
+  "Horario/src/features/dashboard/components/ProgressSection.tsx": {
+    "mtime": 1792394458.2259657,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f7bfecba1dab04e6f8ef6e89084d5824",
+    "semantic_hash": "f7bfecba1dab04e6f8ef6e89084d5824"
+  },
+  "Horario/src/features/dashboard/components/QuickAddTask.tsx": {
+    "mtime": 1789641767.756412,
+    "seen": 1792744055.6862059,
+    "ast_hash": "9f2085ababf4061453e6fbb217a4ef2d",
+    "semantic_hash": "9f2085ababf4061453e6fbb217a4ef2d"
+  },
+  "Horario/src/features/dashboard/components/TodayScheduleSection.tsx": {
+    "mtime": 1791735419.7246513,
+    "seen": 1792744055.6862059,
+    "ast_hash": "a37fbb8aabe366f3c8b83037b2c0127f",
+    "semantic_hash": "a37fbb8aabe366f3c8b83037b2c0127f"
+  },
+  "Horario/src/features/dashboard/components/TodayTasksSection.tsx": {
+    "mtime": 1791735423.74125,
+    "seen": 1792744055.6862059,
+    "ast_hash": "d850392f6bc7e22a986845757e6e7957",
+    "semantic_hash": "d850392f6bc7e22a986845757e6e7957"
+  },
+  "Horario/src/features/focus/FocusPage.tsx": {
+    "mtime": 1792313021.5351565,
+    "seen": 1792744055.6862059,
+    "ast_hash": "dd220a6222826f080acb73b2f81dcea6",
+    "semantic_hash": "dd220a6222826f080acb73b2f81dcea6"
+  },
+  "Horario/src/features/focus/components/FocusSessionHistory.tsx": {
+    "mtime": 1791735428.1526515,
+    "seen": 1792744055.6862059,
+    "ast_hash": "1bbfdf87e5c968bab2fdb2d09c50fae7",
+    "semantic_hash": "1bbfdf87e5c968bab2fdb2d09c50fae7"
+  },
+  "Horario/src/features/focus/components/FocusSettingsForm.tsx": {
+    "mtime": 1791731401.0529418,
+    "seen": 1792744055.6862059,
+    "ast_hash": "9f7c729f147903102bd9209524a8e018",
+    "semantic_hash": "9f7c729f147903102bd9209524a8e018"
+  },
+  "Horario/src/features/focus/components/SpotifyMusicPanel.tsx": {
+    "mtime": 1792394131.158293,
+    "seen": 1792744055.6862059,
+    "ast_hash": "d00ffb3fc16d06e7daaeaf2166e1fbc7",
+    "semantic_hash": "d00ffb3fc16d06e7daaeaf2166e1fbc7"
+  },
+  "Horario/src/features/schedule/SchedulePage.tsx": {
+    "mtime": 1792333934.2174928,
+    "seen": 1792744055.6862059,
+    "ast_hash": "2cce96afeec913da2be74e33a443fa21",
+    "semantic_hash": "2cce96afeec913da2be74e33a443fa21"
+  },
+  "Horario/src/features/schedule/components/BackgroundUploader.tsx": {
+    "mtime": 1792333952.9082413,
+    "seen": 1792744055.6862059,
+    "ast_hash": "776d021a218b8f7d42cbf9b15201c372",
+    "semantic_hash": "776d021a218b8f7d42cbf9b15201c372"
+  },
+  "Horario/src/features/schedule/components/CreateScheduleCta.tsx": {
+    "mtime": 1792333934.2197156,
+    "seen": 1792744055.6862059,
+    "ast_hash": "23609ec5fb2b2dc2982bfb44adc159fb",
+    "semantic_hash": "23609ec5fb2b2dc2982bfb44adc159fb"
+  },
+  "Horario/src/features/schedule/components/DayView.tsx": {
+    "mtime": 1792333934.2185028,
+    "seen": 1792744055.6862059,
+    "ast_hash": "ca174c60713c370259a54e0df186c2a6",
+    "semantic_hash": "ca174c60713c370259a54e0df186c2a6"
+  },
+  "Horario/src/features/schedule/components/ExportScheduleModal.tsx": {
+    "mtime": 1791732209.1904447,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b22d25659bda771ab0dd80fcba18c8a0",
+    "semantic_hash": "b22d25659bda771ab0dd80fcba18c8a0"
+  },
+  "Horario/src/features/schedule/components/MonthView.tsx": {
+    "mtime": 1792333952.8190093,
+    "seen": 1792744055.6862059,
+    "ast_hash": "558ee0e21f866fd5fe4eef17ce9f04ac",
+    "semantic_hash": "558ee0e21f866fd5fe4eef17ce9f04ac"
+  },
+  "Horario/src/features/schedule/components/ScheduleDesignModal.tsx": {
+    "mtime": 1791702683.8714292,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b81f5db582fcf7e369457a3a1cad0a30",
+    "semantic_hash": "b81f5db582fcf7e369457a3a1cad0a30"
+  },
+  "Horario/src/features/schedule/components/ScheduleForm.tsx": {
+    "mtime": 1792333952.928481,
+    "seen": 1792744055.6862059,
+    "ast_hash": "71ff0e70e359cbd97eaf741b0d1d95b9",
+    "semantic_hash": "71ff0e70e359cbd97eaf741b0d1d95b9"
+  },
+  "Horario/src/features/schedule/components/TemplatePicker.tsx": {
+    "mtime": 1791702657.0400414,
+    "seen": 1792744055.6862059,
+    "ast_hash": "bf63103485053c17307edbacce656817",
+    "semantic_hash": "bf63103485053c17307edbacce656817"
+  },
+  "Horario/src/features/schedule/components/TemplatePreviewMock.tsx": {
+    "mtime": 1791707642.2702699,
+    "seen": 1792744055.6862059,
+    "ast_hash": "38f741952e8884aa519b77aaaec4a99f",
+    "semantic_hash": "38f741952e8884aa519b77aaaec4a99f"
+  },
+  "Horario/src/features/schedule/components/WeekView.tsx": {
+    "mtime": 1791730848.2345455,
+    "seen": 1792744055.6862059,
+    "ast_hash": "0def293e5994581b6d5025615e25097d",
+    "semantic_hash": "0def293e5994581b6d5025615e25097d"
+  },
+  "Horario/src/features/schedule/components/templates/DayPlannerTables.tsx": {
+    "mtime": 1792333952.9509826,
+    "seen": 1792744055.6862059,
+    "ast_hash": "5e26cd8b5dfc8f0a5da80c768c23df94",
+    "semantic_hash": "5e26cd8b5dfc8f0a5da80c768c23df94"
+  },
+  "Horario/src/features/schedule/components/templates/FlatScheduleTable.tsx": {
+    "mtime": 1792333952.8619153,
+    "seen": 1792744055.6862059,
+    "ast_hash": "da489bf8e8dfefb33a33880c8570c7cd",
+    "semantic_hash": "da489bf8e8dfefb33a33880c8570c7cd"
+  },
+  "Horario/src/features/schedule/components/templates/SpreadsheetTable.tsx": {
+    "mtime": 1792333952.7540488,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b8a172fa0bbd92e3daa4119675c60902",
+    "semantic_hash": "b8a172fa0bbd92e3daa4119675c60902"
+  },
+  "Horario/src/features/schedule/components/templates/TimeGridTable.tsx": {
+    "mtime": 1792333952.771551,
+    "seen": 1792744055.6862059,
+    "ast_hash": "d2a5c7c45f8f234854fad0e1d847d483",
+    "semantic_hash": "d2a5c7c45f8f234854fad0e1d847d483"
+  },
+  "Horario/src/features/schedule/templateStyleContext.ts": {
+    "mtime": 1791702622.040084,
+    "seen": 1792744055.6862059,
+    "ast_hash": "996d06840e7505df81e576f117aca608",
+    "semantic_hash": "996d06840e7505df81e576f117aca608"
+  },
+  "Horario/src/features/schedule/timeGrid.ts": {
+    "mtime": 1791707562.3423858,
+    "seen": 1792744055.6862059,
+    "ast_hash": "d14edd3d560abe83ea5757519de3e55e",
+    "semantic_hash": "d14edd3d560abe83ea5757519de3e55e"
+  },
+  "Horario/src/features/schedule/useTimetableTemplateStyle.ts": {
+    "mtime": 1791702625.5791805,
+    "seen": 1792744055.6862059,
+    "ast_hash": "d138684564e31856c30ed782e6d9f7e7",
+    "semantic_hash": "d138684564e31856c30ed782e6d9f7e7"
+  },
+  "Horario/src/features/settings/SettingsPage.tsx": {
+    "mtime": 1791737429.3162506,
+    "seen": 1792744055.6862059,
+    "ast_hash": "19e3ea37e946fa3a162584f8adff1de4",
+    "semantic_hash": "19e3ea37e946fa3a162584f8adff1de4"
+  },
+  "Horario/src/features/settings/components/ThemePreviewCard.tsx": {
+    "mtime": 1791736670.6369524,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f4fdbb17e8021010f1b6a02092aae5be",
+    "semantic_hash": "f4fdbb17e8021010f1b6a02092aae5be"
+  },
+  "Horario/src/features/spotify/SpotifyCallbackPage.tsx": {
+    "mtime": 1792312979.7720716,
+    "seen": 1792744055.6862059,
+    "ast_hash": "1a8f2cf05023910d89ce5c3cacac33bb",
+    "semantic_hash": "1a8f2cf05023910d89ce5c3cacac33bb"
+  },
+  "Horario/src/features/tasks/TasksPage.tsx": {
+    "mtime": 1791735406.0261009,
+    "seen": 1792744055.6862059,
+    "ast_hash": "48d3574353c16cdd628398bf56364f43",
+    "semantic_hash": "48d3574353c16cdd628398bf56364f43"
+  },
+  "Horario/src/features/tasks/components/SmartScheduleModal.tsx": {
+    "mtime": 1791697995.211845,
+    "seen": 1792744055.6862059,
+    "ast_hash": "297b8f60398c3fef273ee98aad7f0168",
+    "semantic_hash": "297b8f60398c3fef273ee98aad7f0168"
+  },
+  "Horario/src/features/tasks/components/TaskFilterBar.tsx": {
+    "mtime": 1789661758.5949378,
+    "seen": 1792744055.6862059,
+    "ast_hash": "c5ed631b7ff2d8e05f9978f61cfa5a7e",
+    "semantic_hash": "c5ed631b7ff2d8e05f9978f61cfa5a7e"
+  },
+  "Horario/src/features/tasks/components/TaskForm.tsx": {
+    "mtime": 1791731897.4960413,
+    "seen": 1792744055.6862059,
+    "ast_hash": "08bd71dd5b70739a5fea1697e2a64ba8",
+    "semantic_hash": "08bd71dd5b70739a5fea1697e2a64ba8"
+  },
+  "Horario/src/hooks/useDashboard.ts": {
+    "mtime": 1791731468.5388305,
+    "seen": 1792744055.6862059,
+    "ast_hash": "94ed6c0b445c923fdcb82db7bd4ba42f",
+    "semantic_hash": "94ed6c0b445c923fdcb82db7bd4ba42f"
+  },
+  "Horario/src/hooks/useFocusTimer.ts": {
+    "mtime": 1791731369.7335489,
+    "seen": 1792744055.6862059,
+    "ast_hash": "a62d2e652a54441066da9937fe6ab086",
+    "semantic_hash": "a62d2e652a54441066da9937fe6ab086"
+  },
+  "Horario/src/hooks/useReminderNotifications.ts": {
+    "mtime": 1791731976.5348697,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b229d28c8d9c91246547e8c80e4e738e",
+    "semantic_hash": "b229d28c8d9c91246547e8c80e4e738e"
+  },
+  "Horario/src/hooks/useSchedules.ts": {
+    "mtime": 1789643097.24441,
+    "seen": 1792744055.6862059,
+    "ast_hash": "94b025821067f18d17277c282419b809",
+    "semantic_hash": "94b025821067f18d17277c282419b809"
+  },
+  "Horario/src/hooks/useSmartScheduling.ts": {
+    "mtime": 1789646971.160897,
+    "seen": 1792744055.6862059,
+    "ast_hash": "5d979b335b391db4db539944449caaba",
+    "semantic_hash": "5d979b335b391db4db539944449caaba"
+  },
+  "Horario/src/hooks/useSpotifyConnection.ts": {
+    "mtime": 1792312963.7563965,
+    "seen": 1792744055.6862059,
+    "ast_hash": "093523cb94ec9f8379678b0218d9e3e5",
+    "semantic_hash": "093523cb94ec9f8379678b0218d9e3e5"
+  },
+  "Horario/src/hooks/useSpotifyPlayer.ts": {
+    "mtime": 1792404356.1754467,
+    "seen": 1792744055.6862059,
+    "ast_hash": "e7a3d1d11426d8c32ab45b0af0c2c326",
+    "semantic_hash": "e7a3d1d11426d8c32ab45b0af0c2c326"
+  },
+  "Horario/src/hooks/useTasks.ts": {
+    "mtime": 1791731870.373879,
+    "seen": 1792744055.6862059,
+    "ast_hash": "fa1cbd2e5d88686b886224f874ae6d87",
+    "semantic_hash": "fa1cbd2e5d88686b886224f874ae6d87"
+  },
+  "Horario/src/hooks/useThemePreferences.ts": {
+    "mtime": 1791738350.1208627,
+    "seen": 1792744055.6862059,
+    "ast_hash": "dc7ba059978443409a6433f8b2781232",
+    "semantic_hash": "dc7ba059978443409a6433f8b2781232"
+  },
+  "Horario/src/hooks/useTimetablePreferences.ts": {
+    "mtime": 1791702615.8059657,
+    "seen": 1792744055.6862059,
+    "ast_hash": "0fb01a3d16a6f253bbd3567160431b94",
+    "semantic_hash": "0fb01a3d16a6f253bbd3567160431b94"
+  },
+  "Horario/src/lib/supabase.ts": {
+    "mtime": 1789648675.2197864,
+    "seen": 1792744055.6862059,
+    "ast_hash": "0acc59b45646e00db433ef0c01caad77",
+    "semantic_hash": "0acc59b45646e00db433ef0c01caad77"
+  },
+  "Horario/src/main.tsx": {
+    "mtime": 1789649016.168031,
+    "seen": 1792744055.6862059,
+    "ast_hash": "20ef66dffdcee88a3e341a0cf0210a2a",
+    "semantic_hash": "20ef66dffdcee88a3e341a0cf0210a2a"
+  },
+  "Horario/src/services/auth/authService.ts": {
+    "mtime": 1789648921.3082685,
+    "seen": 1792744055.6862059,
+    "ast_hash": "97a555b31c8a695978b6ec954c81529c",
+    "semantic_hash": "97a555b31c8a695978b6ec954c81529c"
+  },
+  "Horario/src/services/focus/focusService.ts": {
+    "mtime": 1791731316.7779837,
+    "seen": 1792744055.6862059,
+    "ast_hash": "47a306817b0dac9f72b713a52f645f8f",
+    "semantic_hash": "47a306817b0dac9f72b713a52f645f8f"
+  },
+  "Horario/src/services/schedule/scheduleService.ts": {
+    "mtime": 1789649008.0737045,
+    "seen": 1792744055.6862059,
+    "ast_hash": "cf056f61a35765a1860dc2861056195f",
+    "semantic_hash": "cf056f61a35765a1860dc2861056195f"
+  },
+  "Horario/src/services/scheduling/schedulingService.ts": {
+    "mtime": 1789646959.3061502,
+    "seen": 1792744055.6862059,
+    "ast_hash": "2c0f96758e1b89a3c7a6c0789cb0b101",
+    "semantic_hash": "2c0f96758e1b89a3c7a6c0789cb0b101"
+  },
+  "Horario/src/services/spotify/spotifyApiService.ts": {
+    "mtime": 1792394156.7825735,
+    "seen": 1792744055.6862059,
+    "ast_hash": "e9e7b4b57d00f9bf830caab5af3b9e19",
+    "semantic_hash": "e9e7b4b57d00f9bf830caab5af3b9e19"
+  },
+  "Horario/src/services/spotify/spotifyAuthService.ts": {
+    "mtime": 1792317152.5358777,
+    "seen": 1792744055.6862059,
+    "ast_hash": "ce485abf91fceaddb736ea0c5702a0b4",
+    "semantic_hash": "ce485abf91fceaddb736ea0c5702a0b4"
+  },
+  "Horario/src/services/spotify/spotifyConnectionService.ts": {
+    "mtime": 1792312873.4118662,
+    "seen": 1792744055.6862059,
+    "ast_hash": "2dc71a47aabd33ebc3c7348936f88d80",
+    "semantic_hash": "2dc71a47aabd33ebc3c7348936f88d80"
+  },
+  "Horario/src/services/tasks/taskService.ts": {
+    "mtime": 1792403429.0013692,
+    "seen": 1792744055.6862059,
+    "ast_hash": "2c227be6f147732197e4584a124739ed",
+    "semantic_hash": "2c227be6f147732197e4584a124739ed"
+  },
+  "Horario/src/services/theme/themePreferencesService.ts": {
+    "mtime": 1791736557.6461368,
+    "seen": 1792744055.6862059,
+    "ast_hash": "5024048c4cd5ca771daa487883c1991b",
+    "semantic_hash": "5024048c4cd5ca771daa487883c1991b"
+  },
+  "Horario/src/services/timetable/timetablePreferencesService.ts": {
+    "mtime": 1791702607.391486,
+    "seen": 1792744055.6862059,
+    "ast_hash": "4425324dd3cbfe91dab231efe88653e6",
+    "semantic_hash": "4425324dd3cbfe91dab231efe88653e6"
+  },
+  "Horario/src/types/auth.ts": {
+    "mtime": 1789648909.9076247,
+    "seen": 1792744055.6862059,
+    "ast_hash": "aae67a76763d80c0279a6116c556fc4b",
+    "semantic_hash": "aae67a76763d80c0279a6116c556fc4b"
+  },
+  "Horario/src/types/dashboard.ts": {
+    "mtime": 1789641607.075969,
+    "seen": 1792744055.6862059,
+    "ast_hash": "c467907acbe6063fc520ba86757cb59f",
+    "semantic_hash": "c467907acbe6063fc520ba86757cb59f"
+  },
+  "Horario/src/types/focus.ts": {
+    "mtime": 1791731301.9744732,
+    "seen": 1792744055.6862059,
+    "ast_hash": "2d397a7ecc133261a672cce1e99b5ff1",
+    "semantic_hash": "2d397a7ecc133261a672cce1e99b5ff1"
+  },
+  "Horario/src/types/schedule.ts": {
+    "mtime": 1789643018.614782,
+    "seen": 1792744055.6862059,
+    "ast_hash": "55a3ddca9bb01a72bfb59bd9509ba569",
+    "semantic_hash": "55a3ddca9bb01a72bfb59bd9509ba569"
+  },
+  "Horario/src/types/scheduling.ts": {
+    "mtime": 1789646877.525084,
+    "seen": 1792744055.6862059,
+    "ast_hash": "8e589bb344c1d3fb0aa739da9e2f8b7e",
+    "semantic_hash": "8e589bb344c1d3fb0aa739da9e2f8b7e"
+  },
+  "Horario/src/types/spotify.ts": {
+    "mtime": 1792312837.8334408,
+    "seen": 1792744055.6862059,
+    "ast_hash": "cb3de0994a00bbb2ed7db5b4172ed4fe",
+    "semantic_hash": "cb3de0994a00bbb2ed7db5b4172ed4fe"
+  },
+  "Horario/src/types/task.ts": {
+    "mtime": 1791731835.259138,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b00a7e2c518f102dbf60741a3267961d",
+    "semantic_hash": "b00a7e2c518f102dbf60741a3267961d"
+  },
+  "Horario/src/types/themePreferences.ts": {
+    "mtime": 1791736487.9761329,
+    "seen": 1792744055.6862059,
+    "ast_hash": "038726c1b0026df50206423619c0de44",
+    "semantic_hash": "038726c1b0026df50206423619c0de44"
+  },
+  "Horario/src/types/timetablePreferences.ts": {
+    "mtime": 1791702581.0120163,
+    "seen": 1792744055.6862059,
+    "ast_hash": "4b2a5fa3efe06d08b70fb8c5c401fddf",
+    "semantic_hash": "4b2a5fa3efe06d08b70fb8c5c401fddf"
+  },
+  "Horario/src/utils/applyTheme.ts": {
+    "mtime": 1791736513.836193,
+    "seen": 1792744055.6862059,
+    "ast_hash": "d0a4d230b11c2fea804927da5d6eacf5",
+    "semantic_hash": "d0a4d230b11c2fea804927da5d6eacf5"
+  },
+  "Horario/src/utils/date.ts": {
+    "mtime": 1789646887.117486,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b456f9949aae80bb95f7ccb1e299a4ce",
+    "semantic_hash": "b456f9949aae80bb95f7ccb1e299a4ce"
+  },
+  "Horario/src/utils/deadlines.ts": {
+    "mtime": 1789641622.5022652,
+    "seen": 1792744055.6862059,
+    "ast_hash": "dfb7bda9fe6f1c84b45ac2392899e72b",
+    "semantic_hash": "dfb7bda9fe6f1c84b45ac2392899e72b"
+  },
+  "Horario/src/utils/exportSchedule.ts": {
+    "mtime": 1791732336.062863,
+    "seen": 1792744055.6862059,
+    "ast_hash": "146861f6dc21d42325e2648e30a11af2",
+    "semantic_hash": "146861f6dc21d42325e2648e30a11af2"
+  },
+  "Horario/src/utils/fileValidation.ts": {
+    "mtime": 1791730844.993427,
+    "seen": 1792744055.6862059,
+    "ast_hash": "07ae6f786cad395e9cc5056a64ecdc87",
+    "semantic_hash": "07ae6f786cad395e9cc5056a64ecdc87"
+  },
+  "Horario/src/utils/focus.ts": {
+    "mtime": 1791731378.2943897,
+    "seen": 1792744055.6862059,
+    "ast_hash": "2e651750ffdf2f9a2babe1eba1dcfb91",
+    "semantic_hash": "2e651750ffdf2f9a2babe1eba1dcfb91"
+  },
+  "Horario/src/utils/freeTime.ts": {
+    "mtime": 1789646908.737553,
+    "seen": 1792744055.6862059,
+    "ast_hash": "c457fe9f1789756be93e8d625b6c3290",
+    "semantic_hash": "c457fe9f1789756be93e8d625b6c3290"
+  },
+  "Horario/src/utils/progress.ts": {
+    "mtime": 1789641628.7516184,
+    "seen": 1792744055.6862059,
+    "ast_hash": "de7daae5b6bcd3e0c220cb180bebf05c",
+    "semantic_hash": "de7daae5b6bcd3e0c220cb180bebf05c"
+  },
+  "Horario/src/utils/reminders.ts": {
+    "mtime": 1791731967.7957308,
+    "seen": 1792744055.6862059,
+    "ast_hash": "e39f5dac06e38bcb6a7ab87132407ff9",
+    "semantic_hash": "e39f5dac06e38bcb6a7ab87132407ff9"
+  },
+  "Horario/src/utils/scheduleConflicts.ts": {
+    "mtime": 1789646893.7643957,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b6f76c84c0c038db1d8d8f88cd949c51",
+    "semantic_hash": "b6f76c84c0c038db1d8d8f88cd949c51"
+  },
+  "Horario/src/utils/spotifyPkce.ts": {
+    "mtime": 1792312853.159057,
+    "seen": 1792744055.6862059,
+    "ast_hash": "adb5f6857283d3263fca04cce4c8f77b",
+    "semantic_hash": "adb5f6857283d3263fca04cce4c8f77b"
+  },
+  "Horario/src/utils/taskFilters.ts": {
+    "mtime": 1789645205.0434818,
+    "seen": 1792744055.6862059,
+    "ast_hash": "aace7bf979b1d1ed6043622a7479ae43",
+    "semantic_hash": "aace7bf979b1d1ed6043622a7479ae43"
+  },
+  "Horario/src/utils/taskRecurrence.ts": {
+    "mtime": 1791731853.524823,
+    "seen": 1792744055.6862059,
+    "ast_hash": "2ae1ea22456b3acc32a8c3dfc949d130",
+    "semantic_hash": "2ae1ea22456b3acc32a8c3dfc949d130"
+  },
+  "Horario/src/vite-env.d.ts": {
+    "mtime": 1792312930.749837,
+    "seen": 1792744055.6862059,
+    "ast_hash": "7dab2c64765ca29d86a532d4576b9fdd",
+    "semantic_hash": "7dab2c64765ca29d86a532d4576b9fdd"
+  },
+  "Horario/supabase/migrations/0001_init_auth_and_schedules.sql": {
+    "mtime": 1789648757.2071233,
+    "seen": 1792744055.6862059,
+    "ast_hash": "b7384214f2d3296a767fada84afc92ba",
+    "semantic_hash": "b7384214f2d3296a767fada84afc92ba"
+  },
+  "Horario/supabase/migrations/0002_timetable_preferences.sql": {
+    "mtime": 1791702576.7204983,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f0e738d5ea56b740047048f8a27ca5f1",
+    "semantic_hash": "f0e738d5ea56b740047048f8a27ca5f1"
+  },
+  "Horario/supabase/migrations/0003_theme_preferences.sql": {
+    "mtime": 1791736548.141466,
+    "seen": 1792744055.6862059,
+    "ast_hash": "089cbe0f4b5889ebd014b5b4bdf44f24",
+    "semantic_hash": "089cbe0f4b5889ebd014b5b4bdf44f24"
+  },
+  "Horario/supabase/migrations/0004_spotify_connection.sql": {
+    "mtime": 1792312831.2085652,
+    "seen": 1792744055.6862059,
+    "ast_hash": "bed953a44141ffa88941e0569eeb7df7",
+    "semantic_hash": "bed953a44141ffa88941e0569eeb7df7"
+  },
+  "Horario/supabase/migrations/0005_tasks.sql": {
+    "mtime": 1792403411.2514045,
+    "seen": 1792744055.6862059,
+    "ast_hash": "5030bf7db560bdad09c567bc7d413ba1",
+    "semantic_hash": "5030bf7db560bdad09c567bc7d413ba1"
+  },
+  "Horario/tsconfig.app.json": {
+    "mtime": 1789640846.5791812,
+    "seen": 1792744055.6862059,
+    "ast_hash": "f4727244be5f3f067d231ab7337117c1",
+    "semantic_hash": "f4727244be5f3f067d231ab7337117c1"
+  },
+  "Horario/tsconfig.json": {
+    "mtime": 1789640841.3645895,
+    "seen": 1792744055.6862059,
+    "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
+    "semantic_hash": "a3d39fa780ebff65444de257f291ce6c"
+  },
+  "Horario/tsconfig.node.json": {
+    "mtime": 1789640851.7553806,
+    "seen": 1792744055.6862059,
+    "ast_hash": "80bfd373781ff754586ddea59a7096fb",
+    "semantic_hash": "80bfd373781ff754586ddea59a7096fb"
+  },
+  "Horario/vercel.json": {
+    "mtime": 1792314128.5959513,
+    "seen": 1792744055.6862059,
+    "ast_hash": "3ce034f37a6661efc8073a99b87d2c87",
+    "semantic_hash": "3ce034f37a6661efc8073a99b87d2c87"
+  },
+  "Horario/vite.config.ts": {
+    "mtime": 1789640859.708542,
+    "seen": 1792744055.6862059,
+    "ast_hash": "5b641ab5f85eff4b0b9acec3417ca9b5",
+    "semantic_hash": "5b641ab5f85eff4b0b9acec3417ca9b5"
+  },
+  "Architecture.md": {
+    "mtime": 1789640392.9335208,
+    "seen": 1792744055.6862059,
+    "ast_hash": "cb188890fe63b6f3452ee678987a141a",
+    "semantic_hash": "cb188890fe63b6f3452ee678987a141a"
+  },
+  "Horario/README.md": {
+    "mtime": 1789624753.502683,
+    "seen": 1792744055.6862059,
+    "ast_hash": "a28dc4cb878325f3e9e5649f3e1469ac",
+    "semantic_hash": "a28dc4cb878325f3e9e5649f3e1469ac"
+  },
+  "Horario/index.html": {
+    "mtime": 1792324370.8729508,
+    "seen": 1792744055.6862059,
+    "ast_hash": "cbaf72cc0e5efe3437fc2d01a0b6944a",
+    "semantic_hash": "cbaf72cc0e5efe3437fc2d01a0b6944a"
+  },
+  "PRD.md": {
+    "mtime": 1789640392.630738,
+    "seen": 1792744055.6862059,
+    "ast_hash": "893f1edface62258dba4b96a3d0d31a7",
+    "semantic_hash": "893f1edface62258dba4b96a3d0d31a7"
+  },
+  "README.md": {
+    "mtime": 1789624445.075153,
+    "seen": 1792744055.6862059,
+    "ast_hash": "869ec4339b35c4aaa83ddd0f45d813fd",
+    "semantic_hash": "869ec4339b35c4aaa83ddd0f45d813fd"
+  },
+  "SKILL.md": {
+    "mtime": 1792324145.145331,
+    "seen": 1792744055.6862059,
+    "ast_hash": "7884065bb82567b16c00a7f2aa1a6a04",
+    "semantic_hash": "7884065bb82567b16c00a7f2aa1a6a04"
+  },
+  "Horario/public/favicon.svg": {
+    "mtime": 1789624516.8228712,
+    "seen": 1792744055.6862059,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": "7e840862161341271697daa99a40d76b"
+  },
+  "Horario/src/assets/hero.png": {
+    "mtime": 1789624516.8279302,
+    "seen": 1792744055.6862059,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": "aead493361b27e7510691c5d7072dfc1"
+  }
+}
